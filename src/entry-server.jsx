@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import App from "./App.jsx";
 
-export { PAGES, pageMeta, SITE_URL } from "./seo.js";
+export { PAGES, pageMeta, SITE_URL, structuredData } from "./seo.js";
 
 export function render(url) {
   return renderToString(

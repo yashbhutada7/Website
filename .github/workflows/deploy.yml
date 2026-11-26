@@ -1,0 +1,66 @@
+# Publishes the website to AWS when changes are merged into `main`.
+# Merging a pull request into main = approving it to go live.
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allows a manual re-publish from the Actions tab
+
+permissions:
+  id-token: write # lets GitHub prove its identity to AWS (no stored keys)
+  contents: read
+
+concurrency:
+  group: publish-website
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: eu-central-1
+  BUCKET: grandeuradvisory.com
+  DISTRIBUTION_ID: E1N3OSAE5ZBZP8
+  ROLE_ARN: arn:aws:iam::851725277521:role/github-deploy-grandeuradvisory-website
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build static site
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      - name: Sign in to AWS (short-lived, website-only access)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload to S3
+        run: |
+          # Script and style files have unique names per build: cache for a year.
+          aws s3 sync dist/assets "s3://$BUCKET/assets" \
+            --cache-control "public, max-age=31536000, immutable"
+          # Images: cache for a week.
+          aws s3 sync dist/images "s3://$BUCKET/images" \
+            --cache-control "public, max-age=604800"
+          # Pages, sitemap, robots.txt: always check for the latest version.
+          # Uploaded last so pages never point to files that aren't there yet.
+          aws s3 sync dist "s3://$BUCKET" \
+            --exclude "assets/*" --exclude "images/*" \
+            --cache-control "no-cache"
+
+      - name: Clear CloudFront cache (free up to 1,000 paths/month; this uses 1)
+        run: |
+          id=$(aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" \
+                 --paths "/*" --query Invalidation.Id --output text)
+          aws cloudfront wait invalidation-completed --distribution-id "$DISTRIBUTION_ID" --id "$id"
+          echo "Live: https://grandeuradvisory.com"

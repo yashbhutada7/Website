@@ -6,7 +6,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const dist = path.resolve("dist");
-const { render, PAGES, pageMeta, SITE_URL } = await import(
+const { render, PAGES, pageMeta, SITE_URL, structuredData } = await import(
   pathToFileURL(path.resolve("dist-ssr/entry-server.mjs")).href
 );
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
@@ -26,8 +26,12 @@ for (const route of Object.keys(PAGES)) {
     `<meta property="og:title" content="${esc(title)}" />`,
     `<meta property="og:description" content="${esc(description)}" />`,
     `<meta property="og:url" content="${url}" />`,
-    `<meta property="og:image" content="${SITE_URL}/images/Grandeur-Advisors-Logo.png" />`,
-    `<meta name="twitter:card" content="summary" />`,
+    `<meta property="og:image" content="${SITE_URL}/images/og-card.png" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="Grandeur Advisors - outsourced bookkeeping and accounting" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<script type="application/ld+json">${JSON.stringify(structuredData(route)).replace(/</g, "\\u003c")}</script>`,
   ].join("\n    ");
 
   const html = template
