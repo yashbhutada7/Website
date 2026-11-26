@@ -1,0 +1,79 @@
+// Testimonials and team bios, word for word from the existing site.
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      "Yash has done excellent job of handling the majority of accounting needs for two scaling companies with multi-currency & cross border e-commerce marketplace transactions. We have experienced significant growth and Yash has done excellent job at keeping up with the growth while creating and maintaining a systems which have helped our financial visibility and accuracy tremendously. It wasn't an easy task to find someone sufficient for this role and we'd previously hired multiple candidates who were not able to fulfill the responsibility of the role. Highly recommend Yash for accounting needs, especially for eCom company.",
+    name: "Kyle Binder",
+    role: "Founder of PetLovers",
+    place: "USA",
+    photo: "/images/Kyle_Binder.jpg",
+  },
+  {
+    quote:
+      "Yash is an excellent team player, collaborator, and has a positive can-do attitude. It has been a pleasure to work with him on a shared multinational client as we elevate their accounting operations and speed to close. He is always willing to challenge my thinking while complex variables. He is highly skilled across the suite of cloud-based accounting solutions and their apps. I look forward to our continued and future opportunities to work together.",
+    name: "Dana M. Harper",
+    role: "Fractional CFO",
+    place: "California, USA",
+    photo: "/images/Dana_Harper.jpg",
+  },
+  {
+    quote:
+      "Yash Bhutada and his team have done excellent jobs on our recent Accounts Receivable, Accounts Payable, and Fixed Assets related projects with our NetSuite implementation. Their expertise, professionalism, and dedication truly set a high standard for quality work in the field of accounting. It has truly been a pleasure working with them.",
+    name: "Tammy Phan",
+    role: "CFO, HTS Poly",
+    place: "",
+    photo: "",
+  },
+  {
+    quote:
+      "Collaborating with Yash and his team has drastically improved our company's bookkeeping and accounting. Their expertise in optimizing Netsuite accounting processes has significantly enhanced our efficiency and accuracy. With their guidance, we seamlessly streamlined our workflows, saving valuable time and resources. Their dedication to month-end reconciliation is exceptional. Yash has consistently ensured that our financials are impeccably reconciled, keeping our team on track and poised for success.",
+    name: "Sharleen Salim",
+    role: "General Manager, Forestindo, Inc",
+    place: "",
+    photo: "",
+  },
+  {
+    quote:
+      "It was a pleasure to work with Yash. Over the period of several months, he always had a positive, can do attitude despite numerous hurdles along the way. He worked as part of the team and was always willing to roll up his sleeves to get stuck in. From ledger accounting to reconciliations to controls, his wide range of experience is evident. I hope to work with him again soon!",
+    name: "Marie Kotter",
+    role: "Accounting Manager",
+    place: "Wimborne, England",
+    photo: "/images/Marie_Kotter.jpg",
+  },
+  {
+    quote:
+      "I had the pleasure of working with team Grandeur, an exceptional accountant, and I couldn't be happier with the experience. Their attention to detail and expertise in financial matters made managing my accounts a breeze. Not only did they keep everything organized and accurate on Quickbooks, but they also provided valuable insights to improve my financial processes.",
+    name: "Michelle George",
+    role: "Freelancer, Executive Assistance",
+    place: "",
+    photo: "/images/Michelle_George.jpg",
+  },
+];
+
+export const TEAM = [
+  {
+    name: "Yash Bhutada",
+    role: "CEO",
+    credential: "CPA",
+    photo: "/images/Yash.jpg",
+    headline: "A visionary CEO crafting financial success with precision and passion",
+    bio: "Yash has spent nearly a decade building robust finance functions for growing companies. He holds a Bachelor's degree in Commerce with honors (2018) and the Certified Public Accountant (CPA) designation. His expertise spans the full accounting cycle, and he brings technology into every engagement: implementing software, automating workflows, building customized systems and using data visualization to cut errors and surface insights.",
+  },
+  {
+    name: "Sumit Bhutada",
+    role: "Fractional CFO",
+    credential: "",
+    photo: "/images/Sumit.jpg",
+    headline: "The financial architect behind our success",
+    bio: "Sumit is the cornerstone of financial leadership at Grandeur Advisors LLP, known for diverse expertise and sound financial judgment. He leads a team specializing in consulting in finance and audit, and since January 2014 has provided comprehensive financial guidance grounded in financial excellence and compliance across a variety of industries.",
+  },
+  {
+    name: "Chetan Bhutada",
+    role: "Fractional CFO",
+    credential: "",
+    photo: "/images/Chetan.jpg",
+    headline: "Collaborative, analytical and committed to excellence",
+    bio: "Chetan is skilled across the full range of finance functions, from organizing year-end financial statements to managing statutory books of accounts. He is known for a keen analytical mind, resolving inconsistencies and ensuring compliance with reporting standards, and his experience covers financial closes and the startup phase of businesses.",
+  },
+];
