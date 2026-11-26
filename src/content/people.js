@@ -24,52 +24,52 @@ export const TESTIMONIALS = [
     quote:
       "We brought Yash on to help us navigate a complex NetSuite transition - migrating a newly acquired business off spreadsheets, closing out the first half of 2025, and getting us to go-live ready. He jumped in immediately, worked independently, and did exactly what we needed. Beyond the transition work, he's continued to support our team on everything from daily close processes to financial modeling. He's deep in NetSuite, communicates clearly, and is great to work with. Highly recommend Yash for any business going through a financial systems transition or needing serious accounting support.",
     name: "Jennifer Vento",
-    role: "Senior Manager, Ecommerce Operations, CDB",
+    role: "Senior Manager, Ecommerce Operations, Can Do Brand",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/jennifer-vento.jpg",
     linkedin: "",
   },
   {
     quote:
       "Yash is a highly skilled accountant with extensive knowledge of accounting and NetSuite. The work he has done for our company has gone well beyond our expectations. I strongly recommend his services, and any company that engages him will not be disappointed.",
     name: "Mario Javier, MS",
-    role: "CFO",
+    role: "CFO, Supersmile",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/mario-javier.jpg",
     linkedin: "https://www.linkedin.com/in/mario-j-72802311a/",
   },
   {
     quote:
       "Working with Yash over the past 2 years has been a game-changer. His diligence and clear, client-friendly explanations have made our accounting partnerships both precise and painless.",
     name: "Anna Quach, CTA",
-    role: "Founder & CEO",
+    role: "Founder & CEO, Boss Consulting",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/anna-quach.jpg",
     linkedin: "https://www.linkedin.com/in/anna-quach-cta-4407b845/",
   },
   {
     quote:
       "I engaged Yash to support our finance team during a critical transition period. He promptly onboarded a capable team member and, over the course of three months, provided consistent, high-quality assistance. Their efforts brought much-needed structure and helped us address urgent accounting requirements. Yash demonstrates strong expertise, actively listens to client needs, and develops effective, actionable plans. I highly recommend him for any organization seeking reliable financial leadership and support.",
     name: "Angie Jannette Orozco",
-    role: "Vice President of Corporate Operations",
+    role: "Vice President of Corporate Operations, Amaze",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/angie-orozco.jpg",
     linkedin: "https://www.linkedin.com/in/angiejannette/",
   },
   {
     quote:
       "I have been working with Yash and his team for over 3 years now, and I can't say enough good things about my experience. Yash is always prompt to respond, delivers on assigned tasks on time, and is always helpful in multiple ways.",
     name: "Heather Fotch",
-    role: "CEO & Founder",
+    role: "CEO & Founder, QIS",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/heather-fotch.jpg",
     linkedin: "",
   },
   {
     quote:
       "To me, Yash is absolutely an accounting wizard! I hired him to help me straighten out our books. He's done a fabulous job doing so. And he makes it very easy for me to understand all, even his accounting words. I highly recommend Yash & Grandeur Advisors LLP",
     name: "John Farrel",
-    role: "President",
+    role: "President, Dacasso",
     place: "",
     photo: "",
     linkedin: "",
