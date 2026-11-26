@@ -240,7 +240,7 @@ export function CTA({
   text = "Tell us how your finance function works today and we'll show you where we can help.",
 }) {
   return (
-    <section className="section" style={{ paddingTop: 0 }}>
+    <section className="section">
       <div className="container">
         <div className="cta">
           <div>

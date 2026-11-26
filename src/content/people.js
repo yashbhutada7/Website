@@ -19,22 +19,6 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Yash Bhutada and his team have done excellent jobs on our recent Accounts Receivable, Accounts Payable, and Fixed Assets related projects with our NetSuite implementation. Their expertise, professionalism, and dedication truly set a high standard for quality work in the field of accounting. It has truly been a pleasure working with them.",
-    name: "Tammy Phan",
-    role: "CFO, HTS Poly",
-    place: "",
-    photo: "",
-  },
-  {
-    quote:
-      "Collaborating with Yash and his team has drastically improved our company's bookkeeping and accounting. Their expertise in optimizing Netsuite accounting processes has significantly enhanced our efficiency and accuracy. With their guidance, we seamlessly streamlined our workflows, saving valuable time and resources. Their dedication to month-end reconciliation is exceptional. Yash has consistently ensured that our financials are impeccably reconciled, keeping our team on track and poised for success.",
-    name: "Sharleen Salim",
-    role: "General Manager, Forestindo, Inc",
-    place: "",
-    photo: "",
-  },
-  {
-    quote:
       "It was a pleasure to work with Yash. Over the period of several months, he always had a positive, can do attitude despite numerous hurdles along the way. He worked as part of the team and was always willing to roll up his sleeves to get stuck in. From ledger accounting to reconciliations to controls, his wide range of experience is evident. I hope to work with him again soon!",
     name: "Marie Kotter",
     role: "Accounting Manager",

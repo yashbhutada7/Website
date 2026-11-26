@@ -6,18 +6,14 @@ import Industries from "@/components/Industries";
 import {
   CheckList,
   CTA,
-  FAQ,
   LogoMarquee,
-  SecurityFeatures,
   ServiceCards,
   Team,
   Testimonials,
-  TimeZones,
 } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { FIRM, STATS } from "@/content/site";
 import { SERVICE_ORDER } from "@/content/services";
-import { HOME_FAQS } from "@/pages/homeFaqs";
 
 export default function Home() {
   useSEO();
@@ -76,10 +72,10 @@ export default function Home() {
         <div className="container">
           <div className="section-head center">
             <h2>
-              An extension of your team, <span className="hl">not a black box</span>
+              Why <span className="hl">Grandeur Advisors</span>
             </h2>
             <p className="lead">
-              Since {FIRM.founded} we have supported fast-growing e-commerce brands, manufacturers, SaaS companies and more.
+              An extension of your finance team since {FIRM.founded}, not a black box.
             </p>
           </div>
           <div className="split">
@@ -97,20 +93,16 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div>
-              <h3 style={{ fontSize: 26 }}>How we work with you</h3>
-              <CheckList
-                items={[
-                  "One dedicated team that knows your books",
-                  "Work done inside your own software",
-                  "Reporting delivered on a schedule you agree",
-                  "NDAs, two-factor authentication and need-to-know access",
-                ]}
-              />
-            </div>
-          </div>
-          <div style={{ marginTop: "clamp(40px, 6vw, 72px)" }}>
-            <SecurityFeatures />
+            <CheckList
+              items={[
+                "One dedicated team that knows your books",
+                "Work done inside your own software: NetSuite, QuickBooks, Xero and more",
+                "Reporting delivered on a schedule you agree",
+                "US Eastern working hours, with overlap for the UK, India and Australia",
+                "NDAs signed before we see your data",
+                "Two-factor authentication and need-to-know access only",
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -130,16 +122,8 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <div className="container split">
-          <div>
-            <h2>
-              We work <span className="hl">when you work</span>
-            </h2>
-            <p className="lead">
-              Our day runs on US Eastern time, with comfortable overlap for clients in the UK, India and Australia.
-            </p>
-          </div>
-          <TimeZones />
+        <div className="container">
+          <Testimonials />
         </div>
       </section>
 
@@ -156,27 +140,6 @@ export default function Home() {
               More about us <Icon name="arrow" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <Testimonials />
-        </div>
-      </section>
-
-      <section className="section alt">
-        <div className="container split top">
-          <div>
-            <h2>
-              Questions <span className="hl">clients ask us</span>
-            </h2>
-            <p className="lead">Anything else? We're happy to help.</p>
-            <Link to="/contact-us/" className="btn btn-primary">
-              Contact us <Icon name="arrow" />
-            </Link>
-          </div>
-          <FAQ items={HOME_FAQS} />
         </div>
       </section>
 

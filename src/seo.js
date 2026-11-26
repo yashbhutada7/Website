@@ -4,7 +4,6 @@
 import { SERVICES, serviceBySlug } from "./content/services.js";
 import { COUNTRIES, FIRM, STANDARDS } from "./content/site.js";
 import { TEAM } from "./content/people.js";
-import { HOME_FAQS } from "./pages/homeFaqs.js";
 
 export const SITE_URL = "https://grandeuradvisory.com";
 export const SITE_NAME = "Grandeur Advisors";
@@ -121,8 +120,7 @@ export function structuredData(path) {
   const graph = [organization];
   if (page === "/") {
     graph.push(
-      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, publisher: { "@id": ORG_ID } },
-      faqPage(HOME_FAQS)
+      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, publisher: { "@id": ORG_ID } }
     );
   } else if (page === "/services/") {
     graph.push(
