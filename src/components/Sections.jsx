@@ -206,7 +206,15 @@ export function Testimonials() {
                 </span>
               )}
               <div>
-                <b>{t.name}</b>
+                <b>
+                  {t.linkedin ? (
+                    <a href={t.linkedin} target="_blank" rel="noopener noreferrer">
+                      {t.name}
+                    </a>
+                  ) : (
+                    t.name
+                  )}
+                </b>
                 <span>{[t.role, t.place].filter(Boolean).join(", ")}</span>
               </div>
             </figcaption>

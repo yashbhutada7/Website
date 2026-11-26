@@ -439,3 +439,5 @@ p { margin: 0 0 1em; }
 .industries.will-reveal.revealed li:hover { transition-delay: 0s; }
 .hero-facts b span, .stat b span { display: inline; font-size: inherit; color: inherit; margin: 0; font-weight: inherit; }
 .hero-facts b .sr-only, .stat b .sr-only { position: absolute; }
+.quote b a { color: var(--ink); }
+.quote b a:hover { color: var(--blue); }
