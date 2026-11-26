@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CTA, StatsBand } from "@/components/Sections";
+import { CheckList, CTA, Eyebrow, StatsPanel, Team } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
-import { TEAM } from "@/content/people";
+import Icon from "@/components/Icons";
 import { COUNTRIES, FIRM, INDUSTRIES, STANDARDS } from "@/content/site";
 
 export default function AboutUs() {
@@ -10,6 +10,7 @@ export default function AboutUs() {
   return (
     <>
       <section className="page-hero">
+        <div className="grid-bg" />
         <div className="container">
           <div>
             <ol className="crumbs" aria-label="Breadcrumb">
@@ -18,14 +19,21 @@ export default function AboutUs() {
               </li>
               <li aria-current="page">About us</li>
             </ol>
-            <h1>About Grandeur Advisors</h1>
+            <h1>
+              About <span className="hl">Grandeur Advisors</span>
+            </h1>
             <p className="lead">
               {FIRM.legalName} was founded in {FIRM.founded} to give growing businesses the kind of finance team that
               larger companies take for granted: accurate books, a dependable close and reports you can act on.
             </p>
           </div>
           <aside className="included" aria-labelledby="facts-h">
-            <h2 id="facts-h">At a glance</h2>
+            <div className="top">
+              <span className="glyph">
+                <Icon name="award" />
+              </span>
+              <h2 id="facts-h">At a glance</h2>
+            </div>
             <ul className="check-list" style={{ gap: 14 }}>
               <li>
                 <span>
@@ -52,13 +60,19 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <StatsBand />
+      <section className="section" style={{ paddingBottom: 0 }}>
+        <div className="container">
+          <StatsPanel />
+        </div>
+      </section>
 
       <section className="section">
-        <div className="container split">
+        <div className="container split top">
           <div>
-            <span className="kicker">Our approach</span>
-            <h2>Personal service, built on trust</h2>
+            <Eyebrow>Our approach</Eyebrow>
+            <h2>
+              Personal service, <span className="hl">built on trust</span>
+            </h2>
           </div>
           <div>
             <p className="lead">
@@ -77,28 +91,15 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section alt">
         <div className="container">
           <div className="section-head">
-            <span className="kicker">Leadership</span>
-            <h2>Meet our professionals</h2>
+            <Eyebrow>Leadership</Eyebrow>
+            <h2>
+              Meet our <span className="hl">professionals</span>
+            </h2>
           </div>
-          <div className="grid">
-            {TEAM.map((m) => (
-              <article className="card member" key={m.name}>
-                <img src={m.photo} alt={m.name} width="200" height="240" loading="lazy" />
-                <div>
-                  <div className="role">
-                    {m.role}
-                    {m.credential ? ` · ${m.credential}` : ""}
-                  </div>
-                  <h3>{m.name}</h3>
-                  <div className="headline">{m.headline}</div>
-                  <p>{m.bio}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <Team full />
         </div>
       </section>
 

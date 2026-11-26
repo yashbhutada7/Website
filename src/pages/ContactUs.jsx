@@ -63,7 +63,7 @@ function ContactForm() {
           <p className="form-status err">Sorry, your message could not be sent. Please try again or contact us by email or phone.</p>
         )}
       </div>
-      <button type="submit" className="btn btn-dark" disabled={status === "sending"}>
+      <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
         {status === "sending" ? "Sending..." : "Send message"}
       </button>
     </form>
@@ -75,6 +75,7 @@ export default function ContactUs() {
   return (
     <>
       <section className="page-hero simple">
+        <div className="grid-bg" />
         <div className="container">
           <div>
             <ol className="crumbs" aria-label="Breadcrumb">
@@ -83,7 +84,9 @@ export default function ContactUs() {
               </li>
               <li aria-current="page">Contact us</li>
             </ol>
-            <h1>Contact us</h1>
+            <h1>
+              Let's <span className="hl">talk</span>
+            </h1>
             <p className="lead">
               The quickest way to start is a free 30-minute consultation. Prefer to write? Send a message and we'll reply by
               email.
@@ -126,8 +129,19 @@ export default function ContactUs() {
                   </a>
                 </div>
               </div>
+              <div className="contact-item">
+                <span className="icon">
+                  <Icon name="users" />
+                </span>
+                <div>
+                  <small>Our CEO on LinkedIn</small>
+                  <a href={FIRM.founderLinkedin} target="_blank" rel="noopener noreferrer">
+                    Yash Bhutada
+                  </a>
+                </div>
+              </div>
             </div>
-            <h2 style={{ fontSize: 22, marginTop: 36 }}>Our working hours</h2>
+            <h2 style={{ fontSize: 24, marginTop: 36 }}>Our working hours</h2>
             <TimeZones />
           </div>
           <ContactForm />

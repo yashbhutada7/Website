@@ -6,7 +6,8 @@
 
 ## Facts and wording
 - Never invent facts, figures, testimonials, credentials or client names. Leave a gap and ask instead.
-- Confirmed facts: CPA with nearly a decade of experience; clients in the USA, UK, Germany, Australia, Thailand and Singapore; Grandeur Advisors LLP, founded 2022; phone +91-7218362866. Do not list "tax planning" as a service (auditing stays).
+- Confirmed facts: CPA with nearly a decade of experience; clients in the USA, Canada, UK, Germany, Portugal, Australia and Thailand (confirmed 26 Nov 2026; Singapore no longer listed); 30+ clients, 200k+ billable hours, team of 20; testimonials keep names and companies; CEO LinkedIn https://www.linkedin.com/in/ca-yash-radheshyam-bhutada-223ab1100/; Grandeur Advisors LLP, founded 2022; phone +91-7218362866. Do not list "tax planning" as a service (auditing stays).
 
 ## Website
+- Design direction (owner feedback 26 Nov 2026): bright, light and photo-led like verveadvisory.in and renocrewsolutions.com. No heavy dark sections. Use real team/office photos.
 - See `.claude/agents/dev.md` for hosting, cost rules and how publishing works (pull request into `main`, preview first, owner approves).

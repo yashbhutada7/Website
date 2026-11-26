@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BookButton } from "@/components/Layout";
-import { CTA, LogoStrip, ServiceCards } from "@/components/Sections";
+import { CTA, Eyebrow, LogoMarquee, ServiceCards } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { SERVICE_ORDER } from "@/content/services";
 import { INDUSTRIES } from "@/content/site";
@@ -11,6 +11,7 @@ export default function Services() {
   return (
     <>
       <section className="page-hero simple">
+        <div className="grid-bg" />
         <div className="container">
           <div>
             <ol className="crumbs" aria-label="Breadcrumb">
@@ -19,7 +20,9 @@ export default function Services() {
               </li>
               <li aria-current="page">Services</li>
             </ol>
-            <h1>Outsourced accounting services</h1>
+            <h1>
+              Outsourced accounting <span className="hl">services</span>
+            </h1>
             <p className="lead">
               From daily bookkeeping to NetSuite migrations and fractional CFO support, our CPA-led team runs the finance
               work that keeps your business moving.
@@ -37,11 +40,13 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section alt">
         <div className="container split">
           <div>
-            <span className="kicker">Industries</span>
-            <h2>Experience across industries</h2>
+            <Eyebrow>Industries</Eyebrow>
+            <h2>
+              Experience across <span className="hl">industries</span>
+            </h2>
             <p className="lead">
               Our team has worked with businesses in most sectors, so we already know the transactions, cut-offs and reports
               that matter in yours.
@@ -55,7 +60,7 @@ export default function Services() {
         </div>
       </section>
 
-      <LogoStrip />
+      <LogoMarquee />
       <CTA />
     </>
   );

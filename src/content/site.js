@@ -9,6 +9,7 @@ export const FIRM = {
   bookingLabel: "Book a free 30-minute consultation",
   linkedin: "https://www.linkedin.com/company/grandeur-advisors-llp",
   instagram: "https://www.instagram.com/grandeuradvisorsllp/",
+  founderLinkedin: "https://www.linkedin.com/in/ca-yash-radheshyam-bhutada-223ab1100/",
 };
 
 // Owner's questionnaire (Q15), 26 Nov 2026.

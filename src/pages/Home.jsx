@@ -2,50 +2,63 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/Icons";
 import { BookButton } from "@/components/Layout";
-import { CheckList, CTA, FAQ, LogoStrip, SecurityList, ServiceCards, StatsBand, Testimonials, TimeZones } from "@/components/Sections";
+import {
+  CheckList,
+  CTA,
+  Eyebrow,
+  FAQ,
+  LogoMarquee,
+  SecurityFeatures,
+  ServiceCards,
+  StatsPanel,
+  Team,
+  Testimonials,
+  TimeZones,
+} from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
-import { FIRM, INDUSTRIES, STANDARDS } from "@/content/site";
+import { FIRM, INDUSTRIES } from "@/content/site";
 import { SERVICE_ORDER } from "@/content/services";
 import { HOME_FAQS } from "@/pages/homeFaqs";
 
-
-function Workspace() {
+function HeroVisual() {
   return (
-    <div className="workspace" aria-hidden="true">
-      <div className="ws-card ws-main">
-        <div className="ws-title">
-          <b>Month-end close</b>
-          <span className="ws-pill">On track</span>
-        </div>
-        {[
-          ["Bank and card reconciliations", "Done"],
-          ["AP aging and accruals", "Done"],
-          ["AR aging and cash application", "Done"],
-          ["Balance sheet reconciliations", "Done"],
-          ["Management reporting pack", "In review"],
-        ].map(([t, s], i) => (
-          <div className="ws-row" key={t}>
-            <span className={`ws-tick${i === 4 ? " todo" : ""}`}>{i < 4 && <Icon name="check" />}</span>
-            <span className="label">{t}</span>
-            <small>{s}</small>
-          </div>
-        ))}
-        <div className="ws-progress">
-          <i />
+    <div className="hero-visual" aria-hidden="true">
+      <div className="ring" />
+      <div className="hero-photo">
+        <img src="/images/Yash.jpg" alt="" width="349" height="473" fetchpriority="high" />
+        <div className="tagline">
+          <b>Yash Bhutada</b>
+          <span>CEO · CPA · Grandeur Advisors</span>
         </div>
       </div>
-      <div className="ws-card ws-chart">
-        <b>Cash position</b>
-        <div className="bars">
-          {[38, 52, 46, 60, 58, 72, 68, 84].map((h, i) => (
+      <div className="float f1">
+        <div className="title">
+          Month-end close <span className="pill">On track</span>
+        </div>
+        {["Bank reconciliations", "AP and AR aging", "Management pack"].map((t) => (
+          <div className="mini-row" key={t}>
+            <i>
+              <Icon name="check" />
+            </i>
+            {t}
+          </div>
+        ))}
+      </div>
+      <div className="float f2">
+        <div className="big-stat">200k+</div>
+        <span>Billable hours delivered</span>
+        <div className="spark">
+          {[30, 45, 38, 58, 52, 70, 64, 86, 78, 100].map((h, i) => (
             <i key={i} style={{ height: `${h}%` }} />
           ))}
         </div>
       </div>
-      <div className="ws-card ws-chips">
-        <img src="/images/tools/Oracle_NetSuite.png" alt="" width="90" height="26" />
-        <img src="/images/tools/QuickBook.svg" alt="" width="90" height="26" />
-        <img src="/images/tools/Xero.svg" alt="" width="40" height="26" />
+      <div className="float f3">
+        <div className="logos-mini">
+          <img src="/images/tools/Oracle_NetSuite.png" alt="" width="80" height="22" />
+          <img src="/images/tools/QuickBook.svg" alt="" width="90" height="22" />
+          <img src="/images/tools/Xero.svg" alt="" width="22" height="22" />
+        </div>
       </div>
     </div>
   );
@@ -56,48 +69,55 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <div className="grid-bg" />
         <div className="container">
           <div>
-            <span className="kicker" style={{ color: "#7fd6e6" }}>
-              CPA-led outsourced accounting
-            </span>
+            <Eyebrow>CPA-led outsourced accounting</Eyebrow>
             <h1>
-              Outsourced bookkeeping and accounting for <em>US and UK businesses</em>
+              Outsourced bookkeeping &amp; accounting for <span className="hl">US &amp; UK businesses</span>
             </h1>
             <p className="lead">
-              Accounts payable and receivable, month-end close, management reporting and NetSuite migrations, handled by a
-              team of 20 that works in your time zone and your software.
+              We run accounts payable and receivable, month-end close, reporting and NetSuite projects for growing
+              companies, in your software and in your time zone.
             </p>
             <div className="btn-row">
               <BookButton />
-              <Link to="/services/" className="btn btn-ghost">
+              <Link to="/services/" className="btn btn-light">
                 Explore services <Icon name="arrow" />
               </Link>
             </div>
-            <ul className="hero-badges">
-              <li>
-                <Icon name="award" /> CPA-led team
-              </li>
-              <li>
-                <Icon name="layers" /> {STANDARDS.join(" & ")}
-              </li>
-              <li>
-                <Icon name="clock" /> US Eastern working hours
-              </li>
-            </ul>
+            <div className="trust">
+              <span className="faces">
+                {["Kyle_Binder", "Dana_Harper", "Marie_Kotter", "Michelle_George"].map((f) => (
+                  <img key={f} src={`/images/${f}.jpg`} alt="" width="42" height="42" />
+                ))}
+              </span>
+              <span>
+                <b>30+ clients</b> in 7 countries
+              </span>
+              <ul>
+                <li>
+                  <Icon name="award" /> CPA-led
+                </li>
+                <li>
+                  <Icon name="layers" /> US GAAP &amp; IFRS
+                </li>
+              </ul>
+            </div>
           </div>
-          <Workspace />
+          <HeroVisual />
         </div>
       </section>
 
-      <StatsBand />
-      <LogoStrip />
+      <LogoMarquee />
 
-      <section className="section soft">
+      <section className="section alt">
         <div className="container">
-          <div className="section-head">
-            <span className="kicker">What we do</span>
-            <h2>Finance operations, handled end to end</h2>
+          <div className="section-head center">
+            <Eyebrow>Our services</Eyebrow>
+            <h2>
+              Everything your finance team needs, <span className="hl">handled</span>
+            </h2>
             <p className="lead">
               Pick one service or hand us the whole back office. We work inside your existing systems and processes.
             </p>
@@ -106,60 +126,88 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section band-dark">
-        <div className="container split">
-          <div>
-            <span className="kicker">Why Grandeur Advisors</span>
-            <h2>An extension of your finance team, not a black box</h2>
+      <section className="section">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>Why Grandeur Advisors</Eyebrow>
+            <h2>
+              An extension of your team, <span className="hl">not a black box</span>
+            </h2>
             <p className="lead">
-              Since {FIRM.founded} we have worked with more than 30 clients across 7 countries, from fast-growing e-commerce
-              brands to manufacturers and SaaS companies.
+              Since {FIRM.founded} we have supported fast-growing e-commerce brands, manufacturers, SaaS companies and more.
             </p>
-            <ul className="chips dark" aria-label="Industries we serve">
-              {INDUSTRIES.map((i) => (
-                <li key={i}>{i}</li>
-              ))}
-            </ul>
           </div>
-          <div>
-            <SecurityList />
+          <StatsPanel />
+          <div className="split top" style={{ marginTop: "clamp(40px, 6vw, 72px)" }}>
+            <div>
+              <h3 style={{ fontSize: 26 }}>Industries we know well</h3>
+              <ul className="chips" aria-label="Industries we serve" style={{ marginTop: 18 }}>
+                {INDUSTRIES.map((i) => (
+                  <li key={i}>{i}</li>
+                ))}
+              </ul>
+              <h3 style={{ fontSize: 26, marginTop: 40 }}>How we work with you</h3>
+              <CheckList
+                items={[
+                  "One dedicated team that knows your books",
+                  "Work done inside your own software",
+                  "Reporting delivered on a schedule you agree",
+                ]}
+              />
+            </div>
+            <SecurityFeatures />
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section alt">
         <div className="container split">
           <div>
-            <span className="kicker">Working hours that fit yours</span>
-            <h2>We work when you work</h2>
+            <Eyebrow>Working hours that fit yours</Eyebrow>
+            <h2>
+              We work <span className="hl">when you work</span>
+            </h2>
             <p className="lead">
               Our day runs on US Eastern time, with comfortable overlap for clients in the UK, India and Australia.
             </p>
-            <CheckList
-              items={[
-                "Daily overlap with US and UK business hours",
-                "One dedicated team that knows your books",
-                "Reporting delivered on a schedule you agree",
-              ]}
-            />
+            <BookButton className="btn btn-primary" />
           </div>
           <TimeZones />
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>Leadership</Eyebrow>
+            <h2>
+              The people behind <span className="hl">your numbers</span>
+            </h2>
+          </div>
+          <Team />
+          <div style={{ textAlign: "center", marginTop: 32 }}>
+            <Link to="/about-us/" className="btn btn-light">
+              More about us <Icon name="arrow" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt">
         <div className="container">
           <Testimonials />
         </div>
       </section>
 
       <section className="section">
-        <div className="container split">
+        <div className="container split top">
           <div>
-            <span className="kicker">FAQ</span>
-            <h2>Questions clients ask us</h2>
+            <Eyebrow>FAQ</Eyebrow>
+            <h2>
+              Questions <span className="hl">clients ask us</span>
+            </h2>
             <p className="lead">Anything else? Ask us on a free 30-minute call.</p>
-            <BookButton className="btn btn-dark" />
+            <BookButton />
           </div>
           <FAQ items={HOME_FAQS} />
         </div>

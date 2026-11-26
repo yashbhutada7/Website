@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Icon, { SERVICE_ICONS } from "@/components/Icons";
 import { BookButton } from "@/components/Layout";
-import { CheckList, CTA, FAQ, SecurityList, ServiceCards } from "@/components/Sections";
+import { CheckList, CTA, Eyebrow, FAQ, SecurityFeatures, ServiceCards, StatsPanel } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { serviceBySlug } from "@/content/services";
 import { INDUSTRIES, SOFTWARE, SOFTWARE_TEXT_ONLY, STANDARDS } from "@/content/site";
@@ -18,6 +19,7 @@ export default function ServicePage() {
   return (
     <>
       <section className="page-hero">
+        <div className="grid-bg" />
         <div className="container">
           <div>
             <ol className="crumbs" aria-label="Breadcrumb">
@@ -31,50 +33,59 @@ export default function ServicePage() {
             </ol>
             <h1>{s.h1}</h1>
             <p className="lead">{s.intro}</p>
-            <div className="btn-row" style={{ marginTop: 24 }}>
+            <div className="btn-row" style={{ marginTop: 28 }}>
               <BookButton />
-              <Link to="/contact-us/" className="btn btn-outline">
+              <Link to="/contact-us/" className="btn btn-light">
                 Send us a message
               </Link>
             </div>
           </div>
           <aside className="included" aria-labelledby="included-h">
-            <h2 id="included-h">What's included</h2>
+            <div className="top">
+              <span className="glyph">
+                <Icon name={SERVICE_ICONS[s.slug]} />
+              </span>
+              <h2 id="included-h">What's included</h2>
+            </div>
             <CheckList items={s.includes.slice(0, 6)} />
           </aside>
         </div>
       </section>
 
       <section className="section">
-        <div className="container split">
+        <div className="container split top">
           <div>
-            <span className="kicker">Scope</span>
-            <h2>What we handle</h2>
+            <Eyebrow>Scope</Eyebrow>
+            <h2>
+              What we <span className="hl">handle</span>
+            </h2>
             <p className="lead">{s.whoFor}</p>
           </div>
           <CheckList items={s.includes} two />
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section alt">
         <div className="container split">
           <div>
-            <span className="kicker">Software</span>
-            <h2>Done in the tools you already use</h2>
+            <Eyebrow>Software</Eyebrow>
+            <h2>
+              Done in the tools <span className="hl">you already use</span>
+            </h2>
             <p className="lead">
               No new system to learn. We log in to your software and work to {STANDARDS.join(" or ")}, depending on how you
               report.
             </p>
           </div>
-          <ul className="logo-row" style={{ justifyContent: "flex-start", gap: "24px 32px" }}>
+          <ul className="logo-grid">
             {s.software.map((name) =>
               LOGOS[name] ? (
                 <li key={name}>
-                  <img src={LOGOS[name]} alt={name} width="140" height="30" loading="lazy" />
+                  <img src={LOGOS[name]} alt={name} width="130" height="28" loading="lazy" />
                 </li>
               ) : SOFTWARE_TEXT_ONLY.includes(name) ? (
-                <li key={name} className="txt">
-                  {name}
+                <li key={name}>
+                  <span className="txt">{name}</span>
                 </li>
               ) : null
             )}
@@ -82,39 +93,46 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="section band-dark">
-        <div className="container split">
-          <div>
-            <span className="kicker">Your data stays safe</span>
-            <h2>Access you control</h2>
-            <p className="lead">The same security practices apply to every client, on every engagement.</p>
-            <ul className="chips dark" aria-label="Industries we serve">
-              {INDUSTRIES.map((i) => (
-                <li key={i}>{i}</li>
-              ))}
-            </ul>
+      <section className="section">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>Why Grandeur Advisors</Eyebrow>
+            <h2>
+              Your data stays <span className="hl">safe with us</span>
+            </h2>
+            <p className="lead">The same practices apply to every client, on every engagement.</p>
           </div>
-          <SecurityList />
+          <SecurityFeatures />
+          <div style={{ marginTop: 40 }}>
+            <StatsPanel />
+          </div>
+          <ul className="chips" aria-label="Industries we serve" style={{ justifyContent: "center", marginTop: 32 }}>
+            {INDUSTRIES.map((i) => (
+              <li key={i}>{i}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container split">
+      <section className="section alt">
+        <div className="container split top">
           <div>
-            <span className="kicker">FAQ</span>
-            <h2>{s.name}: common questions</h2>
+            <Eyebrow>FAQ</Eyebrow>
+            <h2>
+              {s.name}: <span className="hl">common questions</span>
+            </h2>
           </div>
           <FAQ items={s.faqs} />
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="kicker">Related services</span>
+            <Eyebrow>Related services</Eyebrow>
             <h2>Often combined with</h2>
           </div>
-          <ServiceCards slugs={s.related} featuredStyle={false} cols={3} />
+          <ServiceCards slugs={s.related} cols={3} badges={false} />
         </div>
       </section>
 

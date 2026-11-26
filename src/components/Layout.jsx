@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import Icon from "@/components/Icons";
+import Icon, { SERVICE_ICONS } from "@/components/Icons";
 import { FIRM } from "@/content/site";
 import { SERVICES, SERVICE_ORDER, serviceBySlug } from "@/content/services";
 
@@ -38,26 +38,35 @@ function Header() {
         <Brand />
         <ul className="nav-links">
           <li className="has-menu">
-            <NavLink to="/services/">
+            <NavLink to="/services/" className={({ isActive }) => (isActive ? "active" : "")}>
               Services <Icon name="chevron" width="16" height="16" />
             </NavLink>
             <div className="menu">
               {ordered.map((s) => (
                 <Link key={s.slug} to={`/services/${s.slug}/`}>
-                  <b>{s.name}</b>
-                  <span>{s.short}</span>
+                  <span className="mi">
+                    <Icon name={SERVICE_ICONS[s.slug]} />
+                  </span>
+                  <span>
+                    <b>{s.name}</b>
+                    <span>{s.short}</span>
+                  </span>
                 </Link>
               ))}
               <Link to="/services/" className="all">
-                All services →
+                View all services <Icon name="arrow" width="16" height="16" />
               </Link>
             </div>
           </li>
           <li>
-            <NavLink to="/about-us/">About</NavLink>
+            <NavLink to="/about-us/" className={({ isActive }) => (isActive ? "active" : "")}>
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact-us/">Contact</NavLink>
+            <NavLink to="/contact-us/" className={({ isActive }) => (isActive ? "active" : "")}>
+              Contact
+            </NavLink>
           </li>
         </ul>
         <div className="nav-cta">
@@ -149,7 +158,9 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/about-us/">About us</Link>
+                <a href={FIRM.founderLinkedin} target="_blank" rel="noopener noreferrer">
+                  Yash Bhutada on LinkedIn
+                </a>
               </li>
             </ul>
           </div>
@@ -157,6 +168,9 @@ function Footer() {
         <div className="legal">
           <span>© {FIRM.legalName}. All rights reserved.</span>
           <span>Serving clients in the USA, UK, Europe and Australia.</span>
+        </div>
+        <div className="wordmark" aria-hidden="true">
+          Grandeur
         </div>
       </div>
     </footer>
