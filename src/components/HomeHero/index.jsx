@@ -12,7 +12,13 @@ const HomeHero = () => {
           </h1>
         </div>
         <div className={styles.rightWrap}>
-          <img src="/images/heroImage.svg" alt="" width={500} height={500} />
+          <img
+            src="/images/heroImage.svg"
+            alt=""
+            width={500}
+            height={500}
+            fetchpriority="high"
+          />
         </div>
       </div>
     </div>
