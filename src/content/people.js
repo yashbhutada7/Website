@@ -8,7 +8,7 @@ export const TESTIMONIALS = [
     name: "Rebecca Billington, CPA",
     role: "Controller, TMD",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/rebecca-billington.jpg",
     linkedin: "",
   },
   {
