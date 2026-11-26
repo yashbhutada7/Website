@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import Carousel from "react-multi-carousel";
+import Carousel from "@/components/ClientCarousel";
 
 const CustomDot = ({ onClick, ...rest }) => {
   const { active } = rest;
@@ -40,7 +40,7 @@ const Testimonials = () => {
   return (
     <div className={styles.Testimonials}>
       <div className="container">
-        <h1 className={styles.header}>Client Success Stories</h1>
+        <h2 className={styles.header}>Client Success Stories</h2>
         <Carousel
           arrows={false}
           renderButtonGroupOutside={true}
@@ -57,7 +57,7 @@ const Testimonials = () => {
           <div className={styles.TestimonialWrap}>
             <img
               src="/images/Kyle_Binder.jpg"
-              alt=""
+              alt="Kyle Binder"
               height={300}
               width={300}
             />
@@ -75,17 +75,17 @@ const Testimonials = () => {
                 recommend Yash for accounting needs, especially for eCom
                 company.
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Kyle Binder, <br />
                 Founder of PetLovers
                 <br /> USA.
-              </h2>
+              </p>
             </div>
           </div>
           <div className={styles.TestimonialWrap}>
             <img
               src="/images/Dana_Harper.jpg"
-              alt=""
+              alt="Dana M. Harper"
               height={300}
               width={300}
             />
@@ -100,17 +100,17 @@ const Testimonials = () => {
                 their apps. I look forward to our continued and future
                 opportunities to work together."
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Dana M. Harper <br />
                 Fractional CFO
                 <br /> California, USA.
-              </h2>
+              </p>
             </div>
           </div>
           <div className={styles.TestimonialWrap}>
             <img
               src="/images/Michelle_George.jpg"
-              alt=""
+              alt="Michelle George"
               height={300}
               width={300}
             />
@@ -126,16 +126,16 @@ const Testimonials = () => {
                 business, and I highly recommend team Grandeur's services to
                 anyone in need of a reliable and skilled accountant."
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Michelle George <br />
                 Freelancer, Executive Assistance.
-              </h2>
+              </p>
             </div>
           </div>
           <div className={styles.TestimonialWrap}>
             <img
               src="/images/Marie_Kotter.jpg"
-              alt=""
+              alt="Marie Kotter"
               height={300}
               width={300}
             />
@@ -149,13 +149,13 @@ const Testimonials = () => {
                 range of experience is evident. I hope to work with him again
                 soon!"
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Marie Kotter
                 <br />
                 Accounting Manager
                 <br />
                 Wimborne, England.
-              </h2>
+              </p>
             </div>
           </div>
           <div className={styles.TestimonialWrap}>
@@ -169,10 +169,10 @@ const Testimonials = () => {
                 standard for quality work in the field of accounting. It has
                 truly been a pleasure working with them."
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Tammy Phan <br />
                 CFO, HTS Poly.
-              </h2>
+              </p>
             </div>
           </div>
           <div className={styles.TestimonialWrap}>
@@ -194,12 +194,12 @@ const Testimonials = () => {
                 We're grateful for their partnership and the positive impact
                 they've had on our business."
               </p>
-              <h2 className={styles.clientName}>
+              <p className={styles.clientName}>
                 Sharleen Salim, <br />
                 General Manager
                 <br />
                 Forestindo, Inc
-              </h2>
+              </p>
             </div>
           </div>
         </Carousel>

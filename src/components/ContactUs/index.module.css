@@ -45,6 +45,19 @@
   margin: 2px 0 0;
 }
 
+.status {
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.success {
+  color: #1b6b3a;
+}
+
+.error {
+  color: #b3261e;
+}
+
 .submitButton {
   background: #283376;
   border: none;

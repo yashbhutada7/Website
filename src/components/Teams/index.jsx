@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import Carousel from "react-multi-carousel";
+import Carousel from "@/components/ClientCarousel";
 
 const CustomDot = ({ onClick, ...rest }) => {
   const { active } = rest;
@@ -40,7 +40,7 @@ const Teams = () => {
   return (
     <div className={styles.teamsWrapper}>
       <div className="container">
-        <h1 className={styles.header}>Meet Our Professionals</h1>
+        <h2 className={styles.header}>Meet Our Professionals</h2>
         <Carousel
           arrows={false}
           renderButtonGroupOutside={true}
@@ -58,12 +58,12 @@ const Teams = () => {
             <div className={styles.imageWrap}>
               <img
                 src="/images/Yash.jpg"
-                alt=""
+                alt="Yash Bhutada"
                 height={300}
                 width={125}
                 className={styles.logoImages}
               />
-              <h4 className={styles.title}>Yash Butada (CEO)</h4>
+              <h4 className={styles.title}>Yash Bhutada (CEO)</h4>
             </div>
             <p className={styles.description}>
               <strong>
@@ -93,7 +93,7 @@ const Teams = () => {
             <div className={styles.imageWrap}>
               <img
                 src="/images/Sumit.jpg"
-                alt=""
+                alt="Sumit Bhutada"
                 height={300}
                 width={125}
                 className={styles.logoImages}
@@ -125,7 +125,7 @@ const Teams = () => {
             <div className={styles.imageWrap}>
               <img
                 src="/images/Chetan.jpg"
-                alt=""
+                alt="Chetan Bhutada"
                 height={300}
                 width={125}
                 className={styles.logoImages}

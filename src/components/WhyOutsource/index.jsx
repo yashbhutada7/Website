@@ -5,7 +5,7 @@ const WhyOutsource = () => {
   return (
     <div className={styles.whyOutsource}>
       <div className="container">
-        <h1 className={styles.header}>Why Outsource Accounting?</h1>
+        <h2 className={styles.header}>Why Outsource Accounting?</h2>
         <div className={styles.features}>
           <p>Expertise That Matters</p>
           <p>Tailored made solutions</p>

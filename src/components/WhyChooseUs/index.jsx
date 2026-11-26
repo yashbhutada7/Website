@@ -5,7 +5,7 @@ const WhyChooseUs = () => {
   return (
     <div className={styles.WhyChooseUs}>
       <div className="container">
-        <h1 className={styles.header}>Why Choose Us</h1>
+        <h2 className={styles.header}>Why Choose Us</h2>
         <p className={styles.subtitle}>
           At Grandeur Advisors, we believe that making the right choice is
           pivotal to achieving remarkable outcomes. Here's why partnering with
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
         </p>
         <p className={styles.subtitle}>
           Ready to take the next step? Get in touch with us today at{" "}
-          <a href="mailto: Info@grandeuradvisory.com">
+          <a href="mailto:Info@grandeuradvisory.com">
             Info@grandeuradvisory.com
           </a>{" "}
           and let's embark on a transformative partnership!

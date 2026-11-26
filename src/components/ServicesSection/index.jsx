@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <div className={styles.servicesWrap}>
       <div className="container">
-        <h1 className={styles.header}>Services We Provide</h1>
+        <h2 className={styles.header}>Services We Provide</h2>
         <div className={styles.features}>
           <p>Virtual Bookkeeping and Accounting Outsourcing</p>
           <p>Management Reports</p>

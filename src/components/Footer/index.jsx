@@ -15,7 +15,7 @@ const Footer = () => {
                 width={20}
                 alt=""
               />
-              <a href="mailto: Info@grandeuradvisory.com">
+              <a href="mailto:Info@grandeuradvisory.com">
                 Info@grandeuradvisory.com
               </a>
             </p>
@@ -28,7 +28,7 @@ const Footer = () => {
                 alt=""
               />
               <a
-                href="tel: +91-9209586140"
+                href="tel:+91-9209586140"
                 className={styles.contactLink}
                 id="contact"
               >

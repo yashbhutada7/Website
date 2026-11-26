@@ -8,11 +8,7 @@ import WhyOutsource from "@/components/WhyOutsource";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
-  useSEO({
-    title: "Grandeur Advisors – Work Culture Unlike any Other!",
-    description:
-      "Discover comprehensive financial solutions tailored to your needs with Grandeur Advisors. Our expert team provides personalized guidance for a secure financial future. Explore our range of services today!",
-  });
+  useSEO();
 
   return (
     <>

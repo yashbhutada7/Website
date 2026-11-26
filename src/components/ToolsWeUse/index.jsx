@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
-import Carousel from "react-multi-carousel";
+import Carousel from "@/components/ClientCarousel";
 
 const CustomDot = ({ onClick, ...rest }) => {
   const { active } = rest;
@@ -40,7 +40,7 @@ const ToolsWeUse = () => {
   return (
     <div className={styles.toolsWeUse}>
       <div className="container">
-        <h1 className={styles.header}>Tools We Use</h1>
+        <h2 className={styles.header}>Tools We Use</h2>
         <Carousel
           arrows={false}
           renderButtonGroupOutside={true}
@@ -55,7 +55,7 @@ const ToolsWeUse = () => {
           className={styles.sliderWrapper}
         >
           <div>
-            <h1 className={styles.title}>Accounting Software</h1>
+            <h3 className={styles.title}>Accounting Software</h3>
             <div className={styles.logoWrap}>
               <img
                 src="/images/tools/Oracle_NetSuite.png"
@@ -66,7 +66,7 @@ const ToolsWeUse = () => {
               />
               <img
                 src="/images/tools/QuickBook.svg"
-                alt="QuickBook logo"
+                alt="QuickBooks logo"
                 height={14}
                 width={202}
                 className={styles.logoImages}
@@ -88,7 +88,7 @@ const ToolsWeUse = () => {
             </div>
           </div>
           <div>
-            <h1 className={styles.title}>AP management software</h1>
+            <h3 className={styles.title}>AP management software</h3>
             <div className={styles.logoWrap}>
               <img
                 src="/images/tools/tipalti.svg"
@@ -113,7 +113,7 @@ const ToolsWeUse = () => {
               />
               <img
                 src="/images/tools/Lightyear.png"
-                alt="zoho logo"
+                alt="Lightyear logo"
                 height={14}
                 width={202}
                 className={styles.logoImages}
@@ -121,7 +121,7 @@ const ToolsWeUse = () => {
             </div>
           </div>
           <div>
-            <h1 className={styles.title}>Inventory management software</h1>
+            <h3 className={styles.title}>Inventory management software</h3>
             <div className={styles.logoWrap}>
               <img
                 src="/images/tools/Vend.svg"

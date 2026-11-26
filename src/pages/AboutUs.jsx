@@ -4,11 +4,7 @@ import styles from "@/styles/About.module.css";
 import { useSEO } from "@/hooks/useSEO";
 
 const AboutUs = () => {
-  useSEO({
-    title: "About Us - Grandeur Advisors",
-    description:
-      "Discover comprehensive financial solutions tailored to your needs with Grandeur Advisors. Our expert team provides personalized guidance for a secure financial future. Explore our range of services today!",
-  });
+  useSEO();
 
   return (
     <div className={styles.aboutUsWrap}>
