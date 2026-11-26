@@ -1,4 +1,4 @@
-// Service pages. Each targets the search terms US and UK buyers use for it.
+// Service pages. Each targets the search terms buyers use in the USA, UK, Canada, Europe and Australia.
 // Scope is described from the owner's questionnaire; no outcomes or prices are claimed.
 
 export const SERVICES = [
@@ -9,7 +9,7 @@ export const SERVICES = [
     featured: true,
     title: "Outsourced Accounts Payable Services | AP Management | Grandeur Advisors",
     description:
-      "Outsourced accounts payable (AP) services for US and UK businesses: bill processing, approvals, vendor payments and AP reconciliations in NetSuite, QuickBooks, Xero, Bill.com and Tipalti.",
+      "Outsourced accounts payable (AP) services for businesses in the USA, UK, Canada, Europe, Australia and beyond: bill processing, approvals, vendor payments and AP reconciliations in NetSuite, QuickBooks, Xero, Bill.com and Tipalti.",
     h1: "Outsourced accounts payable services",
     intro:
       "We run your accounts payable process from bill capture to payment run, so vendors are paid correctly and on time and your liabilities are always up to date.",
@@ -49,7 +49,7 @@ export const SERVICES = [
     featured: true,
     title: "Outsourced Accounts Receivable Services | AR Management | Grandeur Advisors",
     description:
-      "Outsourced accounts receivable (AR) services: customer invoicing, cash application, collections follow-up and AR aging reports for US and UK businesses, in NetSuite, QuickBooks and Xero.",
+      "Outsourced accounts receivable (AR) services: customer invoicing, cash application, collections follow-up and AR aging reports for businesses in the USA, UK, Canada, Europe, Australia and beyond, in NetSuite, QuickBooks and Xero.",
     h1: "Outsourced accounts receivable services",
     intro:
       "We take care of invoicing, cash application and collections follow-up, so your customers are billed correctly, payments are matched, and you always know who owes you what.",
@@ -87,9 +87,9 @@ export const SERVICES = [
     name: "Outsourced Bookkeeping",
     short: "Accurate, up-to-date books every week, kept by a CPA-led team.",
     featured: true,
-    title: "Outsourced Bookkeeping Services for US & UK Businesses | Grandeur Advisors",
+    title: "Outsourced Bookkeeping Services for Growing Businesses | Grandeur Advisors",
     description:
-      "Outsourced and online bookkeeping services for US and UK businesses: daily transaction coding, bank reconciliations and weekly reporting in NetSuite, QuickBooks Online and Xero, by a CPA-led team.",
+      "Outsourced and online bookkeeping services for businesses in the USA, UK, Canada, Europe, Australia and beyond: daily transaction coding, bank reconciliations and weekly reporting in NetSuite, QuickBooks Online and Xero, by a CPA-led team.",
     h1: "Outsourced bookkeeping services",
     intro:
       "A CPA-led team keeps your books accurate and current, from daily transaction coding to bank reconciliations and weekly reporting, in the accounting system you already use.",
@@ -165,7 +165,7 @@ export const SERVICES = [
     featured: false,
     title: "Management Reporting & Management Accounts Services | Grandeur Advisors",
     description:
-      "Monthly financial statements, management accounts and custom KPI reports for US and UK businesses, including NetSuite saved searches and custom reports.",
+      "Monthly financial statements, management accounts and custom KPI reports for businesses in the USA, UK, Canada, Europe, Australia and beyond, including NetSuite saved searches and custom reports.",
     h1: "Management reporting and financial statements",
     intro:
       "We turn closed books into monthly financial statements and management accounts, with the custom reports and KPIs your leadership team actually uses.",
@@ -201,7 +201,7 @@ export const SERVICES = [
     featured: false,
     title: "Fractional CFO Services | Part-Time CFO & Finance Director | Grandeur Advisors",
     description:
-      "Fractional CFO and part-time finance director services for growing US and UK businesses: financial leadership, reporting oversight, cash management and finance process improvement.",
+      "Fractional CFO and part-time finance director services for growing businesses worldwide: financial leadership, reporting oversight, cash management and finance process improvement.",
     h1: "Fractional CFO services",
     intro:
       "Our fractional CFOs give you senior finance leadership on a part-time basis: oversight of your numbers, better finance processes, and a partner for the decisions that matter.",

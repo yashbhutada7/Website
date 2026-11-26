@@ -15,9 +15,9 @@ export const FIRM = {
 // Owner's questionnaire (Q15), 26 Nov 2026.
 export const STATS = [
   { value: "30+", label: "Clients served" },
-  { value: "200k+", label: "Billable hours" },
   { value: "20", label: "Team members" },
   { value: "7", label: "Countries" },
+  { value: "2022", label: "Founded" },
 ];
 
 export const COUNTRIES = [

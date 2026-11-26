@@ -108,7 +108,7 @@ function Footer() {
           <div>
             <Brand />
             <p>
-              CPA-led outsourced accounting for growing businesses in the USA, UK and Europe. Bookkeeping, AP and AR,
+              CPA-led outsourced accounting for growing businesses across North America, Europe, Australia and Asia. Bookkeeping, AP and AR,
               month-end close, reporting and NetSuite.
             </p>
             <div className="socials">

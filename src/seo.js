@@ -13,10 +13,10 @@ export const PAGES = {
   "/": {
     title: "Outsourced Bookkeeping & Accounting Services | Grandeur Advisors",
     description:
-      "CPA-led outsourced bookkeeping, accounts payable and receivable, month-end close, management reporting and NetSuite services for businesses in the USA, UK and Europe.",
+      "CPA-led outsourced bookkeeping, accounts payable and receivable, month-end close, management reporting and NetSuite services for growing businesses worldwide, with clients across North America, Europe, Australia and Asia.",
   },
   "/services/": {
-    title: "Outsourced Accounting Services for US & UK Businesses | Grandeur Advisors",
+    title: "Outsourced Accounting Services for Growing Businesses | Grandeur Advisors",
     description:
       "Outsourced accounting services: bookkeeping, AP and AR management, month-end close, management reporting, fractional CFO, audit support and NetSuite implementation and migration.",
   },

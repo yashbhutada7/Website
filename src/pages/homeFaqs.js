@@ -7,7 +7,7 @@ export const HOME_FAQS = [
   },
   {
     q: "Which countries do you work with?",
-    a: `We currently work with clients in ${COUNTRIES.slice(0, -1).join(", ")} and ${COUNTRIES[COUNTRIES.length - 1]}. Our main focus is the USA, the UK and Europe.`,
+    a: `We currently work with clients in ${COUNTRIES.slice(0, -1).join(", ")} and ${COUNTRIES[COUNTRIES.length - 1]}. We work with businesses anywhere, in your time zone and your software.`,
   },
   {
     q: "Which accounting software do you use?",

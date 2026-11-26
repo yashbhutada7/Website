@@ -365,3 +365,34 @@ p { margin: 0 0 1em; }
 .svc h2 { font-size: 21px; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 8px; }
 .hero h1 { font-size: clamp(40px, 5.2vw, 68px); }
 .hero .container { align-items: center; }
+
+/* Photo hero (owner feedback: full background picture, Grandeur front and centre) */
+.hero-photo-band { position: relative; overflow: hidden; color: #e8ecfb; background: #0c1235; }
+.hero-photo-band .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.hero-photo-band .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 18, 53, 0.94) 0%, rgba(20, 28, 77, 0.82) 45%, rgba(23, 154, 178, 0.35) 100%); }
+.hero-photo-band .container { position: relative; padding-block: clamp(80px, 12vw, 168px) clamp(40px, 6vw, 72px); }
+.hero-photo-band h1 { color: #fff; margin: 0 0 24px; max-width: 900px; }
+.hero-photo-band .brandline { display: block; font-size: clamp(48px, 8vw, 104px); line-height: 0.98; letter-spacing: -0.045em; }
+.hero-photo-band .tagline { display: block; margin-top: 18px; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.25; font-weight: 600; letter-spacing: -0.02em; color: #bfe9f1; max-width: 26ch; }
+.hero-photo-band .lead { color: #d3daf6; max-width: 58ch; margin-bottom: 34px; }
+.btn-ghost { background: rgba(255, 255, 255, 0.06); color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.14); border-color: #fff; }
+.hero-facts { list-style: none; padding: 0; margin: clamp(48px, 7vw, 96px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255, 255, 255, 0.22); }
+.hero-facts li { padding: 22px 20px 0 0; }
+.hero-facts b { display: block; font-size: clamp(30px, 3.6vw, 44px); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1; }
+.hero-facts span { display: block; margin-top: 8px; font-size: 15px; color: #b9c3ea; }
+@media (max-width: 640px) { .hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 8px; } }
+
+/* Inner page headers share the hero photo */
+.page-hero { background: #0c1235 url("/images/photos/hero-city.jpg") center 35% / cover no-repeat; border-bottom: 0; color: #e8ecfb; }
+.page-hero::before { background: linear-gradient(90deg, rgba(12, 18, 53, 0.95) 0%, rgba(20, 28, 77, 0.86) 50%, rgba(23, 154, 178, 0.4) 100%); }
+.page-hero .grid-bg { display: none; }
+.page-hero h1 { color: #fff; }
+.page-hero h1 .hl { background: none; color: #bfe9f1; -webkit-text-fill-color: #bfe9f1; }
+.page-hero .lead { color: #d3daf6; }
+.page-hero .crumbs, .page-hero .crumbs a { color: #b9c3ea; }
+.page-hero .btn-light { background: rgba(255, 255, 255, 0.06); color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+.page-hero .btn-light:hover { background: rgba(255, 255, 255, 0.14); border-color: #fff; }
+.page-hero .btn-primary { background: #fff; color: var(--navy); box-shadow: none; }
+.page-hero .btn-primary:hover { background: var(--ice); }
+.page-hero .included { color: var(--body); }

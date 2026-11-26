@@ -6,8 +6,9 @@ import { SECURITY, SOFTWARE, SOFTWARE_TEXT_ONLY, STATS, TIME_ZONES } from "@/con
 import { SERVICE_ORDER, serviceBySlug } from "@/content/services";
 import { TEAM, TESTIMONIALS } from "@/content/people";
 
-export function Eyebrow({ children }) {
-  return <span className="eyebrow">{children}</span>;
+// Small label tags were removed at the owner's request; kept as a no-op so pages stay simple.
+export function Eyebrow() {
+  return null;
 }
 
 export function StatsPanel() {
