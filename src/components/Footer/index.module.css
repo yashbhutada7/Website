@@ -1,0 +1,59 @@
+.FooterWrap {
+  color: white;
+  font-size: 18px;
+  background: #283376;
+  margin: 90px 0 0;
+  padding: 42px 0;
+}
+
+.linkWrap {
+  @media (min-width: 768px) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.linkWrap a {
+  color: white;
+  font-size: 18px;
+  margin-right: 24px;
+  text-decoration: none;
+}
+
+.linkWrap a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.socialLogo {
+  @media (max-width: 767px) {
+    margin: 42px 0 0;
+  }
+}
+
+.socialLogo a {
+  margin-right: 16px;
+}
+
+.addressSection {
+  margin: 0;
+}
+
+.addressSection p {
+  margin: 0 0 12px;
+  max-width: 400px;
+}
+
+.addressSection p:last-of-type {
+  margin: 0;
+}
+
+.addressSection a {
+  color: white;
+  margin-left: 12px;
+}
+
+.icon {
+  margin-bottom: 4px;
+}

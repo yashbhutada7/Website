@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Nunito";
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: all 3;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.contentWrapper {
+  min-height: 600px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.btnPrimary {
+  background: #283376;
+  border: none;
+  color: white;
+  font-size: 21px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 28px;
+}
+
+.btnPrimary:hover {
+  background: #344195;
+}
+
+.react-multi-carousel-list {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0 30px 0;
+}
+.react-multi-carousel-track {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, transition;
+  transition: transform 1s !important;
+}
+.react-multi-carousel-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  padding: 0;
+}
+
+/* .react-multi-carousel-item--active {
+  @include for-desktop-768-to-2560 {
+    margin-right: 7px;
+  }
+} */
+
+.react-multiple-carousel__arrow--right,
+.react-multiple-carousel__arrow--left {
+  display: none;
+}
+
+.active,
+.inactive {
+  background: transparent;
+  border: 0;
+  margin-bottom: 8px;
+  padding: 1px 4px;
+  cursor: pointer;
+}
+.active .cricleDots {
+  background: #283376;
+}
+
+.cricleDots {
+  background: grey;
+  display: block;
+  border-radius: 14px;
+  height: 14px;
+  width: 14px;
+}
+
+.react-multi-carousel-list {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: 245px;
+  position: relative;
+  padding: 20px 0 92px 0;
+}
+
+.react-multi-carousel-track {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 1s !important;
+  will-change: transform, transition;
+}
+
+.react-multi-carousel-dot-list {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.react-multi-carousel-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  padding: 0 19px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .react-multi-carousel-item {
+    flex-shrink: 0 !important;
+  }
+  .react-multi-carousel-track {
+    overflow: visible !important;
+  }
+}
+
+.description {
+  font-size: 18px;
+  margin: 40px 18px 0;
+  max-width: 880px;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 22px;
+    margin: 80px auto 0;
+  }
+}

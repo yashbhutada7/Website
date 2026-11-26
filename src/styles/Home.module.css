@@ -1,0 +1,20 @@
+.mainWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  color: #283376;
+  font-size: 18px;
+  margin-right: 24px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
