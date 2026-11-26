@@ -15,8 +15,8 @@ export default function Home() {
       <HomeHero />
       <p className="description">
         Grandeur Advisors LLP has years of expertise in International Accounting
-        and Taxation with established clients across the USA, UK, Canada,
-        Australia and India. We are actively providing bookkeeping, payroll,
+        and Taxation with established clients across the USA, UK,
+        Germany, Australia, Thailand and Singapore. We are actively providing bookkeeping, payroll,
         management reporting and accounting services across major countries of
         the world to a wide variety of businesses.
       </p>

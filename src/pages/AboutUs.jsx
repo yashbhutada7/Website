@@ -18,8 +18,8 @@ const AboutUs = () => {
       </p>
       <p className={styles.description}>
         Our team of seasoned professionals brings a wealth of experience and
-        knowledge to every engagement. From tax planning and compliance to
-        auditing and advisory services, we offer comprehensive solutions
+        knowledge to every engagement. From compliance to auditing and
+        advisory services, we offer comprehensive solutions
         designed to help our clients achieve their financial goals and navigate
         today's complex business landscape with confidence.
       </p>

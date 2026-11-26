@@ -7,7 +7,7 @@ export const PAGES = {
   "/": {
     title: "Outsourced Bookkeeping & Accounting Services | Grandeur Advisors",
     description:
-      "Grandeur Advisors LLP provides outsourced bookkeeping, month-end close, AP/AR, payroll and management reporting for businesses in the USA, UK, Canada, Australia and India, using NetSuite, QuickBooks, Xero and Zoho.",
+      "Grandeur Advisors LLP provides outsourced bookkeeping, month-end close, AP/AR, payroll and management reporting for businesses in the USA, UK, Germany, Australia, Thailand and Singapore, using NetSuite, QuickBooks, Xero and Zoho.",
   },
   "/about-us": {
     title: "About Us | Grandeur Advisors",

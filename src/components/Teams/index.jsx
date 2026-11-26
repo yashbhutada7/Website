@@ -72,11 +72,11 @@ const Teams = () => {
               </strong>
               <br />
               Yash isn't your typical finance professional; he is a visionary
-              strategist, sculpting robust financial landscapes for over six
-              years with a passionate dedication to excellence. His journey
-              began with academic brilliance, earning him the prestigious
-              Chartered Accountancy title in 2019 and a Bachelor's degree in
-              Commerce with honors in 2018. Since then, Yash has been on a
+              strategist, sculpting robust financial landscapes for nearly a
+              decade with a passionate dedication to excellence. His journey
+              began with academic brilliance, earning a Bachelor's degree in
+              Commerce with honors in 2018 and the prestigious Certified Public
+              Accountant (CPA) designation. Since then, Yash has been on a
               relentless pursuit of financial mastery, leaving an enduring mark
               on the industries he engages with. His expertise spans the entire
               financial spectrum, showcasing an adept understanding of
