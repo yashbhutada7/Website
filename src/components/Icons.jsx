@@ -53,6 +53,32 @@ const P = {
     </>
   ),
   layers: <path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5" />,
+  // industries
+  factory: <path d="M3 21V10l6 4V10l6 4V6l6 3v12zM7 17h2M12 17h2M17 17h2" />,
+  truck: (
+    <>
+      <path d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3.5v3h-7" />
+      <circle cx="6.5" cy="18" r="1.8" />
+      <circle cx="17" cy="18" r="1.8" />
+    </>
+  ),
+  cart: (
+    <>
+      <path d="M3 4h2.5l2.2 11h10.6l2-7.5H6.4" />
+      <circle cx="9" cy="19" r="1.5" />
+      <circle cx="17" cy="19" r="1.5" />
+    </>
+  ),
+  megaphone: <path d="M4 10v4h3l8 4V6l-8 4zM18 9.5a3.5 3.5 0 010 5M7 14l1.2 5h2.3l-1-5" />,
+  hardhat: <path d="M6 21V3.5M3 21h8M6 4.5l14 3M6 8h14M17.5 8v4.5M16 12.5h3V16h-3zM9 3.5L6 4.5" />,
+  cloud: <path d="M7 18.5h10.5a4 4 0 00.6-7.95A6 6 0 006.6 9.1 4.7 4.7 0 007 18.5z" />,
+  monitor: (
+    <>
+      <rect x="3" y="4.5" width="18" height="12" rx="2" />
+      <path d="M8.5 20h7M12 16.5V20M8 11l2.5-2.5L13 11l3-3" />
+    </>
+  ),
+  building: <path d="M4 21V5.5L12 3v18M12 8.5l8 2.5V21M2.5 21h19M7.5 8.5v.01M7.5 12v.01M7.5 15.5v.01M15.5 13v.01M15.5 16.5v.01" />,
   // services
   payable: (
     <>

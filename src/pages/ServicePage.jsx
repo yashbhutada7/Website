@@ -4,7 +4,8 @@ import Icon, { SERVICE_ICONS } from "@/components/Icons";
 import { CheckList, CTA, Eyebrow, FAQ, SecurityFeatures, ServiceCards, StatsPanel } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { serviceBySlug } from "@/content/services";
-import { INDUSTRIES, SOFTWARE, SOFTWARE_TEXT_ONLY, STANDARDS } from "@/content/site";
+import { SOFTWARE, SOFTWARE_TEXT_ONLY, STANDARDS } from "@/content/site";
+import Industries from "@/components/Industries";
 import NotFound from "@/pages/NotFound";
 
 const LOGOS = Object.fromEntries(SOFTWARE.map((s) => [s.name, s.logo]));
@@ -104,11 +105,9 @@ export default function ServicePage() {
           <div style={{ marginTop: 40 }}>
             <StatsPanel />
           </div>
-          <ul className="chips" aria-label="Industries we serve" style={{ justifyContent: "center", marginTop: 32 }}>
-            {INDUSTRIES.map((i) => (
-              <li key={i}>{i}</li>
-            ))}
-          </ul>
+          <div style={{ marginTop: 40 }}>
+            <Industries />
+          </div>
         </div>
       </section>
 

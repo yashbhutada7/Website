@@ -4,11 +4,16 @@ Free to use under the Unsplash License (https://unsplash.com/license), fetched v
 
 - hero-city.jpg: Anders Jildén, https://unsplash.com/photos/yb0Qs65aZmc (Picsum id 238)
 - team-at-work.jpg: Alejandro Escamilla, https://unsplash.com/photos/LNRyGwIJr5c (Picsum id 1)
-- svc-accounts-payable.jpg: Alejandro Escamilla, https://unsplash.com/photos/Dl6jeyfihLk (Picsum id 3)
-- svc-accounts-receivable.jpg: Alejandro Escamilla, https://unsplash.com/photos/y83Je1OC6Wc (Picsum id 4)
-- svc-outsourced-bookkeeping.jpg: Galymzhan Abdugalimov, https://unsplash.com/photos/ICW6QYOcdlg (Picsum id 180)
-- svc-month-end-close.jpg: Sonja Langford, https://unsplash.com/photos/eIkbSc3SDtI (Picsum id 357)
-- svc-management-reporting.jpg: Aleksi Tappura, https://unsplash.com/photos/PjH_BkzjxTA (Picsum id 370)
-- svc-fractional-cfo.jpg: Breather, https://unsplash.com/photos/DEdM9Vs6s8w (Picsum id 625)
-- svc-erp-implementation-migration.jpg: Vadim Sherbakov, https://unsplash.com/photos/Hi9GSwWkCJk (Picsum id 60)
-- svc-audit-support.jpg: Patrick Tomasso, https://unsplash.com/photos/Oaqk7qqNh_c (Picsum id 1073)
+
+## Service card photos
+
+CC0 or Public Domain Mark (free for commercial use, no attribution required), found via Openverse (openverse.org).
+
+- svc-accounts-payable.jpg: "Creditcard Payment" by Negative Space, CC0, https://stocksnap.io/photo/creditcard-payment-ZOM5QYEIMV (via Openverse)
+- svc-accounts-receivable.jpg: "Accounting Finance" by Wilfred Iven, CC0, https://stocksnap.io/photo/accounting-finance-JONMP7TPGK (via Openverse)
+- svc-outsourced-bookkeeping.jpg: "Calculator Numbers" by Martin Vorel, CC0, https://stocksnap.io/photo/calculator-numbers-VVXW9WBTB8 (via Openverse)
+- svc-month-end-close.jpg: "Calculator Numbers" by Negative Space, CC0, https://stocksnap.io/photo/calculator-numbers-GIDMT5TDUF (via Openverse)
+- svc-management-reporting.jpg: "Bookkeeping Services in Abbotsford" by seosuman32, Public Domain Mark, https://www.flickr.com/photos/196262984@N06/52604217629 (via Openverse)
+- svc-fractional-cfo.jpg: "Boardroom Business" by Olu Eletu, CC0, https://stocksnap.io/photo/boardroom-business-KCIU8RWM09 (via Openverse)
+- svc-erp-implementation-migration.jpg: "Servers in the Basement" by cogdogblog, CC0, https://www.flickr.com/photos/37996646802@N01/537487004 (via Openverse)
+- svc-audit-support.jpg: "Why Accounting and Bookkeeping in Montreal Important?" by seosuman32, Public Domain Mark, https://www.flickr.com/photos/196262984@N06/52619126640 (via Openverse)

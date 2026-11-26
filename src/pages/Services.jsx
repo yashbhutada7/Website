@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CTA, Eyebrow, LogoMarquee, ServiceCards } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { SERVICE_ORDER } from "@/content/services";
-import { INDUSTRIES } from "@/content/site";
+import Industries from "@/components/Industries";
 
 export default function Services() {
   useSEO();
@@ -37,9 +37,8 @@ export default function Services() {
       </section>
 
       <section className="section alt">
-        <div className="container split">
-          <div>
-            <Eyebrow>Industries</Eyebrow>
+        <div className="container">
+          <div className="section-head center">
             <h2>
               Experience across <span className="hl">industries</span>
             </h2>
@@ -48,11 +47,7 @@ export default function Services() {
               that matter in yours.
             </p>
           </div>
-          <ul className="chips" aria-label="Industries we serve">
-            {INDUSTRIES.map((i) => (
-              <li key={i}>{i}</li>
-            ))}
-          </ul>
+          <Industries />
         </div>
       </section>
 

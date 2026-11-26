@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon, { SERVICE_ICONS } from "@/components/Icons";
+import CountUp from "@/components/CountUp";
 import { SECURITY, SOFTWARE, SOFTWARE_TEXT_ONLY, STATS, TIME_ZONES } from "@/content/site";
 import { SERVICE_ORDER, serviceBySlug } from "@/content/services";
 import { TEAM, TESTIMONIALS } from "@/content/people";
@@ -15,7 +16,9 @@ export function StatsPanel() {
     <div className="stats-panel" role="list" aria-label="Grandeur Advisors in numbers">
       {STATS.map((s) => (
         <div className="stat" role="listitem" key={s.label}>
-          <b className="hl">{s.value}</b>
+          <b className="hl">
+            <CountUp to={s.n} suffix={s.suffix} />
+          </b>
           <span>{s.label}</span>
         </div>
       ))}

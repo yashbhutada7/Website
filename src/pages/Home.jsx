@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/Icons";
+import CountUp from "@/components/CountUp";
+import Industries from "@/components/Industries";
 import {
   CheckList,
   CTA,
@@ -13,7 +15,7 @@ import {
   TimeZones,
 } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
-import { FIRM, INDUSTRIES, STATS } from "@/content/site";
+import { FIRM, STATS } from "@/content/site";
 import { SERVICE_ORDER } from "@/content/services";
 import { HOME_FAQS } from "@/pages/homeFaqs";
 
@@ -44,7 +46,9 @@ export default function Home() {
           <ul className="hero-facts">
             {STATS.map((s) => (
               <li key={s.label}>
-                <b>{s.value}</b>
+                <b>
+                  <CountUp to={s.n} suffix={s.suffix} />
+                </b>
                 <span>{s.label}</span>
               </li>
             ))}
@@ -103,12 +107,6 @@ export default function Home() {
                   "NDAs, two-factor authentication and need-to-know access",
                 ]}
               />
-              <h3 style={{ fontSize: 26, marginTop: 36 }}>Industries we know well</h3>
-              <ul className="chips" aria-label="Industries we serve" style={{ marginTop: 16 }}>
-                {INDUSTRIES.map((i) => (
-                  <li key={i}>{i}</li>
-                ))}
-              </ul>
             </div>
           </div>
           <div style={{ marginTop: "clamp(40px, 6vw, 72px)" }}>
@@ -118,6 +116,20 @@ export default function Home() {
       </section>
 
       <section className="section alt">
+        <div className="container">
+          <div className="section-head center">
+            <h2>
+              Industries <span className="hl">we serve</span>
+            </h2>
+            <p className="lead">
+              Our team has worked across these sectors, so we already know their transactions, cut-offs and reports.
+            </p>
+          </div>
+          <Industries />
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container split">
           <div>
             <h2>
@@ -131,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section alt">
         <div className="container">
           <div className="section-head center">
             <h2>
@@ -147,13 +159,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section">
         <div className="container">
           <Testimonials />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section alt">
         <div className="container split top">
           <div>
             <h2>
