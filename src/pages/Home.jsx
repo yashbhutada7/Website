@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/Icons";
-import { BookButton } from "@/components/Layout";
 import {
   CheckList,
   CTA,
@@ -35,9 +34,11 @@ export default function Home() {
             your software, to US GAAP or IFRS, and in your time zone.
           </p>
           <div className="btn-row">
-            <BookButton className="btn btn-white" />
-            <Link to="/services/" className="btn btn-ghost">
+            <Link to="/services/" className="btn btn-white">
               Explore our services <Icon name="arrow" />
+            </Link>
+            <Link to="/contact-us/" className="btn btn-ghost">
+              Contact us
             </Link>
           </div>
           <ul className="hero-facts">
@@ -125,7 +126,6 @@ export default function Home() {
             <p className="lead">
               Our day runs on US Eastern time, with comfortable overlap for clients in the UK, India and Australia.
             </p>
-            <BookButton className="btn btn-primary" />
           </div>
           <TimeZones />
         </div>
@@ -159,8 +159,10 @@ export default function Home() {
             <h2>
               Questions <span className="hl">clients ask us</span>
             </h2>
-            <p className="lead">Anything else? Ask us on a free 30-minute call.</p>
-            <BookButton />
+            <p className="lead">Anything else? We're happy to help.</p>
+            <Link to="/contact-us/" className="btn btn-primary">
+              Contact us <Icon name="arrow" />
+            </Link>
           </div>
           <FAQ items={HOME_FAQS} />
         </div>

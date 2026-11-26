@@ -396,3 +396,23 @@ p { margin: 0 0 1em; }
 .page-hero .btn-primary { background: #fff; color: var(--navy); box-shadow: none; }
 .page-hero .btn-primary:hover { background: var(--ice); }
 .page-hero .included { color: var(--body); }
+
+/* Team cards: name, role, one-line introduction (owner's format) */
+.person .photo { aspect-ratio: 4 / 5; }
+.person .photo img { object-position: center top; }
+.person h3 { margin: 0; font-size: 22px; }
+.person .role { margin-top: 4px; font-size: 15px; }
+.person .headline { color: var(--ink); font-weight: 500; font-style: italic; margin-top: 12px; }
+
+/* Service cards with photos */
+.svc .art.photo { height: 190px; place-items: end start; padding: 16px; }
+.svc .art.photo::before, .svc .art.photo::after { content: none; }
+.svc .art.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.svc:hover .art.photo img { transform: scale(1.06); }
+.svc .art.photo .glyph { width: 52px; height: 52px; border-radius: 14px; background: rgba(255, 255, 255, 0.92); border: 0; color: var(--navy); box-shadow: 0 6px 18px rgba(15, 20, 48, 0.25); }
+.svc .art.photo .glyph svg { width: 26px; height: 26px; }
+.svc:hover .art.photo .glyph { transform: none; }
+
+/* Software logos in full colour */
+.marquee-track img { filter: none; opacity: 1; }
+.marquee-track .txt { color: var(--navy); }

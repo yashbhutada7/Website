@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/Icons";
-import { BookButton } from "@/components/Layout";
 import { TimeZones } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { FIRM } from "@/content/site";
@@ -88,8 +87,7 @@ export default function ContactUs() {
               Let's <span className="hl">talk</span>
             </h1>
             <p className="lead">
-              The quickest way to start is a free 30-minute consultation. Prefer to write? Send a message and we'll reply by
-              email.
+              Send us a message, email or call. We'll get back to you shortly.
             </p>
           </div>
         </div>
@@ -98,8 +96,7 @@ export default function ContactUs() {
       <section className="section">
         <div className="container contact-grid">
           <div>
-            <BookButton />
-            <div style={{ marginTop: 28 }}>
+            <div>
               <div className="contact-item">
                 <span className="icon">
                   <Icon name="mail" />

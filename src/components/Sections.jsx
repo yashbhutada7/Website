@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon, { SERVICE_ICONS } from "@/components/Icons";
-import { BookButton } from "@/components/Layout";
 import { SECURITY, SOFTWARE, SOFTWARE_TEXT_ONLY, STATS, TIME_ZONES } from "@/content/site";
 import { SERVICE_ORDER, serviceBySlug } from "@/content/services";
 import { TEAM, TESTIMONIALS } from "@/content/people";
@@ -55,8 +54,8 @@ export function ServiceCards({ slugs, headingLevel = "h3", cols = 4, badges = tr
         const idx = SERVICE_ORDER.indexOf(slug);
         return (
           <Link key={slug} to={`/services/${slug}/`} className="svc">
-            <div className={`art art-${idx % 4}`}>
-              {badges && s.featured && <span className="badge">Most requested</span>}
+            <div className={`art photo art-${idx % 4}`}>
+              <img src={`/images/photos/svc-${slug}.jpg`} alt="" width="800" height="498" loading="lazy" />
               <span className="glyph">
                 <Icon name={SERVICE_ICONS[slug]} />
               </span>
@@ -141,15 +140,13 @@ export function Team({ full = false }) {
       {TEAM.map((m) => (
         <article className="person" key={m.name}>
           <div className="photo">
-            <img src={m.photo} alt={m.name} width="400" height="420" />
+            <img src={m.photo} alt={m.name} width="800" height="1000" />
           </div>
           <div className="info">
-            <div className="role">
-              {m.role}
-              {m.credential ? ` · ${m.credential}` : ""}
-            </div>
             <h3>{m.name}</h3>
-            <p>{full ? m.bio : m.headline}</p>
+            <div className="role">{m.role}</div>
+            <p className="headline">{m.headline}</p>
+            {full && <p>{m.bio}</p>}
           </div>
         </article>
       ))}
@@ -237,7 +234,7 @@ export function FAQ({ items }) {
 
 export function CTA({
   title = "Let's get your books in great shape",
-  text = "Book a free 30-minute consultation. We'll learn how your finance function works today and show you where we can help.",
+  text = "Tell us how your finance function works today and we'll show you where we can help.",
 }) {
   return (
     <section className="section" style={{ paddingTop: 0 }}>
@@ -247,7 +244,9 @@ export function CTA({
             <h2>{title}</h2>
             <p>{text}</p>
           </div>
-          <BookButton className="btn btn-white" label="Book a free consultation" />
+          <Link to="/contact-us/" className="btn btn-white">
+            Contact us <Icon name="arrow" />
+          </Link>
         </div>
       </div>
     </section>

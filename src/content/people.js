@@ -54,26 +54,26 @@ export const TESTIMONIALS = [
 export const TEAM = [
   {
     name: "Yash Bhutada",
-    role: "CEO",
+    role: "CEO and Founder",
     credential: "CPA",
-    photo: "/images/Yash.jpg",
-    headline: "A visionary CEO crafting financial success with precision and passion",
+    photo: "/images/team-yash.jpg",
+    headline: "A visionary CEO crafting financial success with precision and passion.",
     bio: "Yash has spent nearly a decade building robust finance functions for growing companies. He holds a Bachelor's degree in Commerce with honors (2018) and the Certified Public Accountant (CPA) designation. His expertise spans the full accounting cycle, and he brings technology into every engagement: implementing software, automating workflows, building customized systems and using data visualization to cut errors and surface insights.",
   },
   {
     name: "Sumit Bhutada",
     role: "Fractional CFO",
     credential: "",
-    photo: "/images/Sumit.jpg",
-    headline: "The financial architect behind our success",
+    photo: "/images/team-sumit.jpg",
+    headline: "The financial architect behind our success.",
     bio: "Sumit is the cornerstone of financial leadership at Grandeur Advisors LLP, known for diverse expertise and sound financial judgment. He leads a team specializing in consulting in finance and audit, and since January 2014 has provided comprehensive financial guidance grounded in financial excellence and compliance across a variety of industries.",
   },
   {
     name: "Chetan Bhutada",
     role: "Fractional CFO",
     credential: "",
-    photo: "/images/Chetan.jpg",
-    headline: "Collaborative, analytical and committed to excellence",
+    photo: "/images/team-chetan.jpg",
+    headline: "Collaborative, analytical and committed to excellence.",
     bio: "Chetan is skilled across the full range of finance functions, from organizing year-end financial statements to managing statutory books of accounts. He is known for a keen analytical mind, resolving inconsistencies and ensuring compliance with reporting standards, and his experience covers financial closes and the startup phase of businesses.",
   },
 ];

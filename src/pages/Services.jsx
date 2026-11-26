@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BookButton } from "@/components/Layout";
 import { CTA, Eyebrow, LogoMarquee, ServiceCards } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { SERVICE_ORDER } from "@/content/services";
@@ -27,9 +26,6 @@ export default function Services() {
               From daily bookkeeping to NetSuite migrations and fractional CFO support, our CPA-led team runs the finance
               work that keeps your business moving.
             </p>
-            <div className="btn-row" style={{ marginTop: 24 }}>
-              <BookButton />
-            </div>
           </div>
         </div>
       </section>

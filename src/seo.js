@@ -29,9 +29,9 @@ export const PAGES = {
       "Grandeur Advisors LLP is a CPA-led outsourced accounting firm founded in 2022, with a team of 20 serving more than 30 clients across the USA, UK, Europe and Australia.",
   },
   "/contact-us/": {
-    title: "Contact Us | Book a Free Consultation | Grandeur Advisors",
+    title: "Contact Us | Grandeur Advisors",
     description:
-      "Book a free 30-minute consultation with Grandeur Advisors, or send us a message about outsourced bookkeeping, AP and AR, month-end close or NetSuite.",
+      "Contact Grandeur Advisors about outsourced bookkeeping, AP and AR, month-end close or NetSuite.",
   },
 };
 

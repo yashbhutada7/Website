@@ -27,6 +27,6 @@ export const HOME_FAQS = [
   },
   {
     q: "How do we get started?",
-    a: "Book a free 30-minute consultation. We'll learn how your finance function works today and suggest where we can help.",
+    a: "Use the booking button at the top of any page, or send us a message on our Contact page. We'll learn how your finance function works today and suggest where we can help.",
   },
 ];

@@ -70,7 +70,7 @@ function Header() {
           </li>
         </ul>
         <div className="nav-cta">
-          <BookButton label="Book a free call" />
+          <BookButton label="Book a free consultation" />
         </div>
         <button
           type="button"
@@ -153,11 +153,6 @@ function Footer() {
                 <a href={`tel:${FIRM.phone}`}>{FIRM.phone}</a>
               </li>
               <li>
-                <a href={FIRM.bookingUrl} target="_blank" rel="noopener noreferrer">
-                  Book a free consultation
-                </a>
-              </li>
-              <li>
                 <a href={FIRM.founderLinkedin} target="_blank" rel="noopener noreferrer">
                   Yash Bhutada on LinkedIn
                 </a>
@@ -186,9 +181,6 @@ export default function Layout({ children }) {
       <Header />
       <main id="main">{children}</main>
       <Footer />
-      <div className="mobile-cta">
-        <BookButton />
-      </div>
     </>
   );
 }

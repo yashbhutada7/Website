@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Icon, { SERVICE_ICONS } from "@/components/Icons";
-import { BookButton } from "@/components/Layout";
 import { CheckList, CTA, Eyebrow, FAQ, SecurityFeatures, ServiceCards, StatsPanel } from "@/components/Sections";
 import { useSEO } from "@/hooks/useSEO";
 import { serviceBySlug } from "@/content/services";
@@ -34,9 +33,8 @@ export default function ServicePage() {
             <h1>{s.h1}</h1>
             <p className="lead">{s.intro}</p>
             <div className="btn-row" style={{ marginTop: 28 }}>
-              <BookButton />
-              <Link to="/contact-us/" className="btn btn-light">
-                Send us a message
+              <Link to="/contact-us/" className="btn btn-primary">
+                Contact us <Icon name="arrow" />
               </Link>
             </div>
           </div>
