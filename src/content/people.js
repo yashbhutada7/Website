@@ -17,7 +17,7 @@ export const TESTIMONIALS = [
     name: "Cat Longshaw",
     role: "CEO & Co-founder, Trace",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/cat-longshaw.jpg",
     linkedin: "",
   },
   {
@@ -71,7 +71,7 @@ export const TESTIMONIALS = [
     name: "John Farrel",
     role: "President, Dacasso",
     place: "",
-    photo: "",
+    photo: "/images/testimonials/john-farrel.jpg",
     linkedin: "",
   },
   {
