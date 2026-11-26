@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { pageMeta, SITE_URL } from "@/seo";
+import { normalizePath, pageMeta, SITE_URL } from "@/seo";
 
 function setMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -18,7 +18,7 @@ export function useSEO() {
   const { pathname } = useLocation();
   useEffect(() => {
     const { title, description } = pageMeta(pathname);
-    const url = SITE_URL + pathname;
+    const url = SITE_URL + normalizePath(pathname);
     document.title = title;
     setMeta("name", "description", description);
     setMeta("property", "og:title", title);

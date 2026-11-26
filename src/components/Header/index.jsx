@@ -18,8 +18,8 @@ const Header = () => {
               />
             </Link>
             <div className={styles.menu}>
-              <Link to="/about-us">About us</Link>
-              <Link to="/contact-us">Enquire now</Link>
+              <Link to="/about-us/">About us</Link>
+              <Link to="/contact-us/">Enquire now</Link>
             </div>
           </div>
         </div>

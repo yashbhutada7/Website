@@ -9,18 +9,24 @@ export const PAGES = {
     description:
       "Grandeur Advisors LLP provides outsourced bookkeeping, month-end close, AP/AR, payroll and management reporting for businesses in the USA, UK, Germany, Australia, Thailand and Singapore, using NetSuite, QuickBooks, Xero and Zoho.",
   },
-  "/about-us": {
+  "/about-us/": {
     title: "About Us | Grandeur Advisors",
     description:
       "Meet the team at Grandeur Advisors LLP, an accounting firm founded in 2022 providing bookkeeping, financial reporting and accounting system support to businesses worldwide.",
   },
-  "/contact-us": {
+  "/contact-us/": {
     title: "Contact Us | Grandeur Advisors",
     description:
       "Contact Grandeur Advisors LLP about outsourced bookkeeping, accounting and management reporting. Send us a message, email or call and we will get back to you.",
   },
 };
 
+// Pages live at addresses ending in "/" (e.g. /about-us/), which is how
+// S3 serves a folder's index.html.
+export function normalizePath(path) {
+  return path.endsWith("/") ? path : path + "/";
+}
+
 export function pageMeta(path) {
-  return PAGES[path] || PAGES["/"];
+  return PAGES[normalizePath(path)] || PAGES["/"];
 }
