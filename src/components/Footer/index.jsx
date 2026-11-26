@@ -28,11 +28,11 @@ const Footer = () => {
                 alt=""
               />
               <a
-                href="tel:+91-9209586140"
+                href="tel:+91-7218362866"
                 className={styles.contactLink}
                 id="contact"
               >
-                +91-9209586140
+                +91-7218362866
               </a>
             </p>
           </div>
