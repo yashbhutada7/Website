@@ -167,61 +167,83 @@ function initials(name) {
 }
 
 export function Testimonials() {
-  const row = useRef(null);
-  const nudge = (dir) => {
-    const el = row.current;
-    if (el) el.scrollBy({ left: dir * Math.min(430, el.clientWidth * 0.9), behavior: "smooth" });
-  };
+  const [i, setI] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const n = TESTIMONIALS.length;
+  useEffect(() => {
+    if (paused) return undefined;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const t = setTimeout(() => setI((x) => (x + 1) % n), 8000);
+    return () => clearTimeout(t);
+  }, [i, paused, n]);
+  const t = TESTIMONIALS[i];
+  const go = (d) => setI((x) => (x + d + n) % n);
   return (
-    <>
-      <div className="head-row">
-        <div className="section-head" style={{ marginBottom: 0 }}>
-          <Eyebrow>Client success stories</Eyebrow>
-          <h2>
-            Trusted by founders, CFOs and <span className="hl">finance teams</span>
-          </h2>
-        </div>
-        <div className="arrows">
-          <button type="button" aria-label="Previous testimonials" onClick={() => nudge(-1)}>
-            <Icon name="arrowLeft" />
-          </button>
-          <button type="button" aria-label="More testimonials" onClick={() => nudge(1)}>
-            <Icon name="arrow" />
-          </button>
-        </div>
+    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)}>
+      <div className="section-head center">
+        <h2>
+          Trusted by founders, CFOs and <span className="hl">finance teams</span>
+        </h2>
       </div>
-      <div className="quotes" ref={row} tabIndex="0" aria-label="Testimonials">
-        {TESTIMONIALS.map((t) => (
-          <figure className="quote" key={t.name}>
-            <div className="mark" aria-hidden="true">
-              “
-            </div>
-            <blockquote>{t.quote}</blockquote>
-            <figcaption>
-              {t.photo ? (
-                <img src={t.photo} alt="" width="50" height="50" />
+      <figure className="tcard" aria-live="polite">
+        <div className="tphoto">
+          {t.photo ? (
+            <img src={t.photo} alt={t.name} width="240" height="240" />
+          ) : (
+            <span className="avatar">{initials(t.name)}</span>
+          )}
+        </div>
+        <div className="tbody">
+          <div className="mark" aria-hidden="true">
+            “
+          </div>
+          <blockquote key={i}>{t.quote}</blockquote>
+          <figcaption>
+            <b>
+              {t.linkedin ? (
+                <a href={t.linkedin} target="_blank" rel="noopener noreferrer">
+                  {t.name}
+                </a>
               ) : (
-                <span className="avatar" aria-hidden="true">
-                  {initials(t.name)}
-                </span>
+                t.name
               )}
-              <div>
-                <b>
-                  {t.linkedin ? (
-                    <a href={t.linkedin} target="_blank" rel="noopener noreferrer">
-                      {t.name}
-                    </a>
-                  ) : (
-                    t.name
-                  )}
-                </b>
-                <span>{[t.role, t.place].filter(Boolean).join(", ")}</span>
-              </div>
-            </figcaption>
-          </figure>
-        ))}
+            </b>
+            <span>{[t.role, t.place].filter(Boolean).join(", ")}</span>
+          </figcaption>
+        </div>
+      </figure>
+      <div className="tnav">
+        <button type="button" className="tarrow" aria-label="Previous testimonial" onClick={() => go(-1)}>
+          <Icon name="arrowLeft" />
+        </button>
+        <div className="tfaces" role="tablist" aria-label="Choose a testimonial">
+          {TESTIMONIALS.map((p, k) => (
+            <button
+              type="button"
+              key={p.name}
+              role="tab"
+              aria-selected={k === i}
+              aria-label={p.name}
+              className={k === i ? "on" : ""}
+              onClick={() => setI(k)}
+            >
+              {p.photo ? <img src={p.photo} alt="" width="56" height="56" loading="lazy" /> : <span>{initials(p.name)}</span>}
+            </button>
+          ))}
+        </div>
+        <button type="button" className="tarrow" aria-label="Next testimonial" onClick={() => go(1)}>
+          <Icon name="arrow" />
+        </button>
       </div>
-    </>
+      {/* All quotes stay in the page for search engines and screen readers. */}
+      <ul className="sr-only">
+        {TESTIMONIALS.map((p) => (
+          <li key={p.name}>
+            {p.quote} — {p.name}, {p.role}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

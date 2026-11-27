@@ -441,3 +441,35 @@ p { margin: 0 0 1em; }
 .hero-facts b .sr-only, .stat b .sr-only { position: absolute; }
 .quote b a { color: var(--ink); }
 .quote b a:hover { color: var(--blue); }
+
+/* Testimonials: one fixed-size featured card plus a row of client faces */
+.tcard { margin: 0 auto; max-width: 1000px; min-height: 380px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 44px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: clamp(28px, 4vw, 48px); box-shadow: var(--shadow); }
+.tphoto img, .tphoto .avatar { width: 240px; height: 240px; border-radius: 24px; object-fit: cover; display: grid; place-items: center; background: var(--ice); color: var(--navy); font: 800 56px var(--font); box-shadow: 0 12px 30px rgba(31, 41, 99, 0.18); }
+.tbody .mark { width: 48px; height: 48px; border-radius: 14px; background: var(--grad); color: #fff; display: grid; place-items: center; font: 800 34px/1 Georgia, serif; margin-bottom: 16px; }
+.tbody blockquote { margin: 0 0 22px; font-size: 18px; line-height: 1.65; color: var(--ink); animation: tfade 0.5s ease both; }
+@keyframes tfade { from { opacity: 0; transform: translateY(6px); } }
+.tbody figcaption b { display: block; font-size: 18px; color: var(--ink); }
+.tbody figcaption b a { color: inherit; }
+.tbody figcaption span { display: block; color: var(--teal-600); font-weight: 500; margin-top: 2px; }
+.tnav { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
+.tfaces { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.tfaces button { width: 56px; height: 56px; padding: 0; border-radius: 50%; border: 3px solid transparent; background: var(--ice); cursor: pointer; overflow: hidden; opacity: 0.55; transition: opacity 0.2s, border-color 0.2s, transform 0.2s; }
+.tfaces button:hover { opacity: 1; transform: translateY(-2px); }
+.tfaces button.on { opacity: 1; border-color: var(--teal); transform: scale(1.08); }
+.tfaces img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.tfaces span { font: 700 15px var(--font); color: var(--navy); }
+.tarrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--navy); cursor: pointer; display: grid; place-items: center; flex: none; }
+.tarrow:hover { background: var(--navy); color: #fff; }
+.tarrow svg { width: 20px; height: 20px; }
+@media (max-width: 760px) {
+  .tcard { grid-template-columns: 1fr; gap: 20px; text-align: center; min-height: 0; }
+  .tphoto img, .tphoto .avatar { width: 150px; height: 150px; margin: 0 auto; }
+  .tbody .mark { margin: 0 auto 14px; }
+  .tbody blockquote { font-size: 16.5px; }
+  .tfaces button { width: 44px; height: 44px; }
+  .tarrow { display: none; }
+}
+/* Fixed card height (tallest quote) so the section never jumps between quotes */
+.tcard { min-height: 545px; }
+@media (max-width: 1100px) { .tcard { min-height: 610px; } }
+@media (max-width: 760px) { .tcard { min-height: 890px; align-content: start; } }
