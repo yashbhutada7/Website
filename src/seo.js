@@ -1,5 +1,10 @@
-// Page titles and descriptions. Used at build time (pre-rendered HTML for
-// Google and social previews) and in the browser when moving between pages.
+// Page titles, descriptions and structured data. Used at build time
+// (pre-rendered HTML for Google and social previews) and in the browser
+// when moving between pages.
+import { SERVICES, serviceBySlug } from "./content/services.js";
+import { COUNTRIES, FIRM, STANDARDS } from "./content/site.js";
+import { TEAM } from "./content/people.js";
+
 export const SITE_URL = "https://grandeuradvisory.com";
 export const SITE_NAME = "Grandeur Advisors";
 
@@ -7,17 +12,25 @@ export const PAGES = {
   "/": {
     title: "Outsourced Bookkeeping & Accounting Services | Grandeur Advisors",
     description:
-      "Grandeur Advisors LLP provides outsourced bookkeeping, month-end close, AP/AR, payroll and management reporting for businesses in the USA, UK, Germany, Australia, Thailand and Singapore, using NetSuite, QuickBooks, Xero and Zoho.",
+      "CPA-led outsourced bookkeeping, accounts payable and receivable, month-end close, management reporting and NetSuite services for growing businesses worldwide, with clients across North America, Europe, Australia and Asia.",
   },
-  "/about-us/": {
-    title: "About Us | Grandeur Advisors",
+  "/services/": {
+    title: "Outsourced Accounting Services for Growing Businesses | Grandeur Advisors",
     description:
-      "Meet the team at Grandeur Advisors LLP, an accounting firm founded in 2022 providing bookkeeping, financial reporting and accounting system support to businesses worldwide.",
+      "Outsourced accounting services: bookkeeping, AP and AR management, month-end close, management reporting, fractional CFO, audit support and NetSuite implementation and migration.",
+  },
+  ...Object.fromEntries(
+    SERVICES.map((s) => [`/services/${s.slug}/`, { title: s.title, description: s.description }])
+  ),
+  "/about-us/": {
+    title: "About Us | CPA-Led Accounting Firm | Grandeur Advisors",
+    description:
+      "Grandeur Advisors LLP is a CPA-led outsourced accounting firm founded in 2022, with a team of 20 serving more than 30 clients across the USA, UK, Europe and Australia.",
   },
   "/contact-us/": {
     title: "Contact Us | Grandeur Advisors",
     description:
-      "Contact Grandeur Advisors LLP about outsourced bookkeeping, accounting and management reporting. Send us a message, email or call and we will get back to you.",
+      "Contact Grandeur Advisors about outsourced bookkeeping, AP and AR, month-end close or NetSuite.",
   },
 };
 
@@ -36,69 +49,64 @@ export function pageMeta(path) {
 // Only facts that appear on the site or were confirmed by the owner.
 // ---------------------------------------------------------------------------
 const ORG_ID = `${SITE_URL}/#organization`;
-
-const COUNTRIES = [
-  "United States",
-  "United Kingdom",
-  "Germany",
-  "Australia",
-  "Thailand",
-  "Singapore",
-];
+const areaServed = COUNTRIES.map((name) => ({ "@type": "Country", name }));
 
 const organization = {
   "@type": "Organization",
   "@id": ORG_ID,
   name: SITE_NAME,
-  legalName: "Grandeur Advisors LLP",
+  legalName: FIRM.legalName,
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/Grandeur-Advisors-Logo.png`,
   image: `${SITE_URL}/images/og-card.png`,
   description: PAGES["/"].description,
-  foundingDate: "2022",
-  telephone: "+91-7218362866",
-  areaServed: COUNTRIES.map((name) => ({ "@type": "Country", name })),
+  foundingDate: FIRM.founded,
+  telephone: FIRM.phone,
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 20 },
+  areaServed,
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    telephone: "+91-7218362866",
+    telephone: FIRM.phone,
     url: `${SITE_URL}/contact-us/`,
     availableLanguage: "English",
   },
-  sameAs: [
-    "https://www.linkedin.com/company/grandeur-advisors-llp",
-    "https://www.instagram.com/grandeuradvisorsllp/",
-  ],
+  sameAs: [FIRM.linkedin, FIRM.instagram],
   knowsAbout: [
-    "Bookkeeping",
-    "Accounting outsourcing",
-    "Management reporting",
-    "Month-end close",
-    "Accounts payable management",
-    "Accounts receivable management",
-    "Balance sheet reconciliation",
-    "Inventory management",
-    "Payroll processing",
-    "Accounting system migration and implementation",
-    "Auditing",
+    ...SERVICES.map((s) => s.name),
+    ...STANDARDS,
     "Oracle NetSuite",
-    "QuickBooks",
+    "QuickBooks Online",
     "Xero",
-    "Zoho",
   ],
 };
 
-const team = [
-  { name: "Yash Bhutada", jobTitle: "CEO", image: "Yash.jpg", cpa: true },
-  { name: "Sumit Bhutada", jobTitle: "Fractional CFO", image: "Sumit.jpg" },
-  { name: "Chetan Bhutada", jobTitle: "Fractional CFO", image: "Chetan.jpg" },
-].map(({ name, jobTitle, image, cpa }) => ({
+const crumbs = (items) => ({
+  "@type": "BreadcrumbList",
+  itemListElement: items.map(([name, path], i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name,
+    item: `${SITE_URL}${path}`,
+  })),
+});
+
+const faqPage = (faqs) => ({
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+});
+
+const team = TEAM.map((m) => ({
   "@type": "Person",
-  name,
-  jobTitle,
-  image: `${SITE_URL}/images/${image}`,
+  name: m.name,
+  jobTitle: m.role,
+  image: `${SITE_URL}${m.photo}`,
   worksFor: { "@id": ORG_ID },
-  ...(cpa && {
+  ...(m.credential === "CPA" && {
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Professional certification",
@@ -111,30 +119,50 @@ export function structuredData(path) {
   const page = normalizePath(path);
   const graph = [organization];
   if (page === "/") {
-    graph.push({
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
-      name: SITE_NAME,
-      publisher: { "@id": ORG_ID },
-    });
+    graph.push(
+      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: SITE_NAME, publisher: { "@id": ORG_ID } }
+    );
+  } else if (page === "/services/") {
+    graph.push(
+      crumbs([["Home", "/"], ["Services", "/services/"]]),
+      {
+        "@type": "ItemList",
+        itemListElement: SERVICES.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${SITE_URL}/services/${s.slug}/`,
+          name: s.name,
+        })),
+      }
+    );
+  } else if (page.startsWith("/services/")) {
+    const s = serviceBySlug[page.split("/")[2]];
+    if (s) {
+      graph.push(
+        {
+          "@type": "Service",
+          name: s.name,
+          serviceType: s.name,
+          description: s.description,
+          url: `${SITE_URL}${page}`,
+          provider: { "@id": ORG_ID },
+          areaServed,
+        },
+        crumbs([["Home", "/"], ["Services", "/services/"], [s.name, page]]),
+        faqPage(s.faqs)
+      );
+    }
   } else if (page === "/about-us/") {
     graph.push(
-      {
-        "@type": "AboutPage",
-        url: `${SITE_URL}/about-us/`,
-        name: PAGES[page].title,
-        about: { "@id": ORG_ID },
-      },
+      { "@type": "AboutPage", url: `${SITE_URL}/about-us/`, name: PAGES[page].title, about: { "@id": ORG_ID } },
+      crumbs([["Home", "/"], ["About us", "/about-us/"]]),
       ...team
     );
   } else if (page === "/contact-us/") {
-    graph.push({
-      "@type": "ContactPage",
-      url: `${SITE_URL}/contact-us/`,
-      name: PAGES[page].title,
-      about: { "@id": ORG_ID },
-    });
+    graph.push(
+      { "@type": "ContactPage", url: `${SITE_URL}/contact-us/`, name: PAGES[page].title, about: { "@id": ORG_ID } },
+      crumbs([["Home", "/"], ["Contact us", "/contact-us/"]])
+    );
   }
   return { "@context": "https://schema.org", "@graph": graph };
 }
