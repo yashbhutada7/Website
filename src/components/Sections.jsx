@@ -169,9 +169,11 @@ function initials(name) {
 export function Testimonials() {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [open, setOpen] = useState(false);
   const n = TESTIMONIALS.length;
+  useEffect(() => setOpen(false), [i]);
   useEffect(() => {
-    if (paused) return undefined;
+    if (paused || open) return undefined;
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
     const t = setTimeout(() => setI((x) => (x + 1) % n), 8000);
     return () => clearTimeout(t);
@@ -197,7 +199,19 @@ export function Testimonials() {
           <div className="mark" aria-hidden="true">
             “
           </div>
-          <blockquote key={i}>{t.quote}</blockquote>
+          <blockquote key={i} className={open ? "open" : ""}>
+            {t.quote}
+          </blockquote>
+          <button
+            type="button"
+            className="tmore"
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+            style={t.quote.length > 260 ? undefined : { visibility: "hidden" }}
+            tabIndex={t.quote.length > 260 ? 0 : -1}
+          >
+            {open ? "Show less" : "Read full review"}
+          </button>
           <figcaption>
             <b>
               {t.linkedin ? (

@@ -43,7 +43,7 @@ export default function Home() {
             {STATS.map((s) => (
               <li key={s.label}>
                 <b>
-                  <CountUp to={s.n} suffix={s.suffix} />
+                  <CountUp to={s.n} suffix={s.suffix} repeatEvery={10000} />
                 </b>
                 <span>{s.label}</span>
               </li>
